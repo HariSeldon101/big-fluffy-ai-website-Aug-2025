@@ -2,10 +2,12 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
-import { Menu, X, Brain, Zap } from 'lucide-react'
+import { Menu, X, LogOut, User } from 'lucide-react'
+import { useAuth } from '@/contexts/AuthContext'
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
+  const { user, signOut } = useAuth()
 
   return (
     <nav className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md border-b border-gray-800">
@@ -28,12 +30,31 @@ export default function Navigation() {
             <Link href="/contact" className="text-foreground hover:text-primary-500 transition-colors">
               Contact
             </Link>
-            <Link 
-              href="/dashboard" 
-              className="bg-primary-600 text-white px-4 py-2 rounded-lg hover:bg-primary-500 transition-colors"
-            >
-              Client Portal
-            </Link>
+            
+            {user ? (
+              <div className="flex items-center space-x-4">
+                <Link 
+                  href="/dashboard" 
+                  className="bg-primary-600 text-white px-4 py-2 rounded-lg hover:bg-primary-500 transition-colors"
+                >
+                  Dashboard
+                </Link>
+                <button 
+                  onClick={signOut}
+                  className="text-gray-300 hover:text-primary-500 transition-colors flex items-center"
+                >
+                  <LogOut size={16} className="mr-1" />
+                  Logout
+                </button>
+              </div>
+            ) : (
+              <Link 
+                href="/auth" 
+                className="bg-primary-600 text-white px-4 py-2 rounded-lg hover:bg-primary-500 transition-colors"
+              >
+                Client Portal
+              </Link>
+            )}
           </div>
 
           <button

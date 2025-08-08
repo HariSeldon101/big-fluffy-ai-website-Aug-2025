@@ -22,3 +22,410 @@
  ✓ Compiled /not-found in 362ms (1089 modules)
  ✓ Compiled in 209ms (552 modules)
  ✓ Compiled in 338ms (1096 modules)
+ ✓ Compiled in 197ms (552 modules)
+ ✓ Compiled in 116ms (552 modules)
+ ✓ Compiled in 56ms (552 modules)
+ ✓ Compiled in 51ms (552 modules)
+ ✓ Compiled in 63ms (1082 modules)
+
+
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ ⨯ Error: @supabase/ssr: Your project's URL and API key are required to create a Supabase client!
+
+Check your Supabase project's API settings to find these values
+
+https://supabase.com/dashboard/project/_/settings/api
+    at createClient (./lib/supabase.ts:8:78)
+    at AuthProvider (./contexts/AuthContext.tsx:18:81)
+
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+
+ ⨯ Error: @supabase/ssr: Your project's URL and API key are required to create a Supabase client!
+
+Check your Supabase project's API settings to find these values
+
+https://supabase.com/dashboard/project/_/settings/api
+    at createClient (./lib/supabase.ts:8:78)
+    at AuthProvider (./contexts/AuthContext.tsx:18:81)
+
+ ⨯ Error: @supabase/ssr: Your project's URL and API key are required to create a Supabase client!
+
+Check your Supabase project's API settings to find these values
+
+https://supabase.com/dashboard/project/_/settings/api
+    at createClient (./lib/supabase.ts:8:78)
+    at AuthProvider (./contexts/AuthContext.tsx:18:81)
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ ⨯ Middleware cannot be used with "output: export". See more info here: https://nextjs.org/docs/advanced-features/static-html-export
+ ⨯ Middleware cannot be used with "output: export". See more info here: https://nextjs.org/docs/advanced-features/static-html-export
+   Reload env: .env.local
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+
+ ⨯ TypeError: Invalid URL
+    at createClient (./lib/supabase.ts:8:78)
+    at AuthProvider (./contexts/AuthContext.tsx:18:81)
+ ⨯ TypeError: Invalid URL
+    at createClient (./lib/supabase.ts:8:78)
+    at AuthProvider (./contexts/AuthContext.tsx:18:81)
+ ⚠ Found a change in next.config.js. Restarting the server to apply the changes...
+   ▲ Next.js 14.0.0
+   - Local:        http://localhost:3000
+   - Environments: .env.local
+
+ ✓ Ready in 1165ms
+ ✓ Compiled /middleware in 266ms (128 modules)
+ ⨯ Error [TypeError]: Invalid URL
+    at new URL (node:internal/url:818:25)
+    at new SupabaseClient (webpack-internal:///(middleware)/./node_modules/@supabase/supabase-js/dist/module/SupabaseClient.js:72:25)
+    at createClient (webpack-internal:///(middleware)/./node_modules/@supabase/supabase-js/dist/module/index.js:61:12)
+    at createServerClient (webpack-internal:///(middleware)/./node_modules/@supabase/ssr/dist/module/createServerClient.js:19:87)
+    at Object.middleware [as handler] (webpack-internal:///(middleware)/./middleware.ts:14:87)
+    at eval (webpack-internal:///(middleware)/./node_modules/next/dist/esm/server/web/adapter.js:181:23)
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_hooks:91:14)
+    at Object.wrap (webpack-internal:///(middleware)/./node_modules/next/dist/esm/server/async-storage/request-async-storage-wrapper.js:81:24)
+    at adapter (webpack-internal:///(middleware)/./node_modules/next/dist/esm/server/web/adapter.js:168:128) {
+  middleware: true
+}
+ ✓ Compiled /_error in 327ms (187 modules)
+ ○ Compiling /not-found ...
+<w> [webpack.cache.PackFileCacheStrategy] Serializing big strings (116kiB) impacts deserialization performance (consider using Buffer instead and decode when needed)
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ ⨯ Error [TypeError]: Invalid URL
+    at new URL (node:internal/url:818:25)
+    at new SupabaseClient (webpack-internal:///(middleware)/./node_modules/@supabase/supabase-js/dist/module/SupabaseClient.js:72:25)
+    at createClient (webpack-internal:///(middleware)/./node_modules/@supabase/supabase-js/dist/module/index.js:61:12)
+    at createServerClient (webpack-internal:///(middleware)/./node_modules/@supabase/ssr/dist/module/createServerClient.js:19:87)
+    at Object.middleware [as handler] (webpack-internal:///(middleware)/./middleware.ts:14:87)
+    at eval (webpack-internal:///(middleware)/./node_modules/next/dist/esm/server/web/adapter.js:181:23)
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_hooks:91:14)
+    at Object.wrap (webpack-internal:///(middleware)/./node_modules/next/dist/esm/server/async-storage/request-async-storage-wrapper.js:81:24)
+    at adapter (webpack-internal:///(middleware)/./node_modules/next/dist/esm/server/web/adapter.js:168:128) {
+  middleware: true
+}
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ ⨯ Error [TypeError]: Invalid URL
+    at new URL (node:internal/url:818:25)
+    at new SupabaseClient (webpack-internal:///(middleware)/./node_modules/@supabase/supabase-js/dist/module/SupabaseClient.js:72:25)
+    at createClient (webpack-internal:///(middleware)/./node_modules/@supabase/supabase-js/dist/module/index.js:61:12)
+    at createServerClient (webpack-internal:///(middleware)/./node_modules/@supabase/ssr/dist/module/createServerClient.js:19:87)
+    at Object.middleware [as handler] (webpack-internal:///(middleware)/./middleware.ts:14:87)
+    at eval (webpack-internal:///(middleware)/./node_modules/next/dist/esm/server/web/adapter.js:181:23)
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_hooks:91:14)
+    at Object.wrap (webpack-internal:///(middleware)/./node_modules/next/dist/esm/server/async-storage/request-async-storage-wrapper.js:81:24)
+    at adapter (webpack-internal:///(middleware)/./node_modules/next/dist/esm/server/web/adapter.js:168:128) {
+  middleware: true
+}
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ ⨯ Error [TypeError]: Invalid URL
+    at new URL (node:internal/url:818:25)
+    at new SupabaseClient (webpack-internal:///(middleware)/./node_modules/@supabase/supabase-js/dist/module/SupabaseClient.js:72:25)
+    at createClient (webpack-internal:///(middleware)/./node_modules/@supabase/supabase-js/dist/module/index.js:61:12)
+    at createServerClient (webpack-internal:///(middleware)/./node_modules/@supabase/ssr/dist/module/createServerClient.js:19:87)
+    at Object.middleware [as handler] (webpack-internal:///(middleware)/./middleware.ts:14:87)
+    at eval (webpack-internal:///(middleware)/./node_modules/next/dist/esm/server/web/adapter.js:181:23)
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_hooks:91:14)
+    at Object.wrap (webpack-internal:///(middleware)/./node_modules/next/dist/esm/server/async-storage/request-async-storage-wrapper.js:81:24)
+    at adapter (webpack-internal:///(middleware)/./node_modules/next/dist/esm/server/web/adapter.js:168:128) {
+  middleware: true
+}
+
+ ⨯ Error [TypeError]: Invalid URL
+    at new URL (node:internal/url:818:25)
+    at new SupabaseClient (webpack-internal:///(middleware)/./node_modules/@supabase/supabase-js/dist/module/SupabaseClient.js:72:25)
+    at createClient (webpack-internal:///(middleware)/./node_modules/@supabase/supabase-js/dist/module/index.js:61:12)
+    at createServerClient (webpack-internal:///(middleware)/./node_modules/@supabase/ssr/dist/module/createServerClient.js:19:87)
+    at Object.middleware [as handler] (webpack-internal:///(middleware)/./middleware.ts:14:87)
+    at eval (webpack-internal:///(middleware)/./node_modules/next/dist/esm/server/web/adapter.js:181:23)
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_hooks:91:14)
+    at Object.wrap (webpack-internal:///(middleware)/./node_modules/next/dist/esm/server/async-storage/request-async-storage-wrapper.js:81:24)
+    at adapter (webpack-internal:///(middleware)/./node_modules/next/dist/esm/server/web/adapter.js:168:128) {
+  middleware: true
+}
+ ⨯ TypeError: Invalid URL
+    at createClient (./lib/supabase.ts:16:78)
+    at AuthProvider (./contexts/AuthContext.tsx:18:81)
+ ⨯ TypeError: Invalid URL
+    at createClient (./lib/supabase.ts:16:78)
+    at AuthProvider (./contexts/AuthContext.tsx:18:81)
+ ⨯ TypeError: Invalid URL
+    at createClient (./lib/supabase.ts:16:78)
+    at AuthProvider (./contexts/AuthContext.tsx:18:81)
+ ⨯ Error [TypeError]: Invalid URL
+    at new URL (node:internal/url:818:25)
+    at new SupabaseClient (webpack-internal:///(middleware)/./node_modules/@supabase/supabase-js/dist/module/SupabaseClient.js:72:25)
+    at createClient (webpack-internal:///(middleware)/./node_modules/@supabase/supabase-js/dist/module/index.js:61:12)
+    at createServerClient (webpack-internal:///(middleware)/./node_modules/@supabase/ssr/dist/module/createServerClient.js:19:87)
+    at Object.middleware [as handler] (webpack-internal:///(middleware)/./middleware.ts:14:87)
+    at eval (webpack-internal:///(middleware)/./node_modules/next/dist/esm/server/web/adapter.js:181:23)
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_hooks:91:14)
+    at Object.wrap (webpack-internal:///(middleware)/./node_modules/next/dist/esm/server/async-storage/request-async-storage-wrapper.js:81:24)
+    at adapter (webpack-internal:///(middleware)/./node_modules/next/dist/esm/server/web/adapter.js:168:128) {
+  middleware: true
+}
+ ⨯ TypeError: Invalid URL
+    at createClient (./lib/supabase.ts:16:78)
+    at AuthProvider (./contexts/AuthContext.tsx:18:81)
+
+ ⨯ Error [TypeError]: Invalid URL
+    at new URL (node:internal/url:818:25)
+    at new SupabaseClient (webpack-internal:///(middleware)/./node_modules/@supabase/supabase-js/dist/module/SupabaseClient.js:72:25)
+    at createClient (webpack-internal:///(middleware)/./node_modules/@supabase/supabase-js/dist/module/index.js:61:12)
+    at createServerClient (webpack-internal:///(middleware)/./node_modules/@supabase/ssr/dist/module/createServerClient.js:19:87)
+    at Object.middleware [as handler] (webpack-internal:///(middleware)/./middleware.ts:21:87)
+    at eval (webpack-internal:///(middleware)/./node_modules/next/dist/esm/server/web/adapter.js:181:23)
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_hooks:91:14)
+    at Object.wrap (webpack-internal:///(middleware)/./node_modules/next/dist/esm/server/async-storage/request-async-storage-wrapper.js:81:24)
+    at adapter (webpack-internal:///(middleware)/./node_modules/next/dist/esm/server/web/adapter.js:168:128) {
+  middleware: true
+}
+ ⨯ TypeError: Invalid URL
+    at createClient (./lib/supabase.ts:16:78)
+    at AuthProvider (./contexts/AuthContext.tsx:18:81)
+
+ ⨯ Error [TypeError]: Invalid URL
+    at new URL (node:internal/url:818:25)
+    at new SupabaseClient (webpack-internal:///(middleware)/./node_modules/@supabase/supabase-js/dist/module/SupabaseClient.js:72:25)
+    at createClient (webpack-internal:///(middleware)/./node_modules/@supabase/supabase-js/dist/module/index.js:61:12)
+    at createServerClient (webpack-internal:///(middleware)/./node_modules/@supabase/ssr/dist/module/createServerClient.js:19:87)
+    at Object.middleware [as handler] (webpack-internal:///(middleware)/./middleware.ts:21:87)
+    at eval (webpack-internal:///(middleware)/./node_modules/next/dist/esm/server/web/adapter.js:181:23)
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_hooks:91:14)
+    at Object.wrap (webpack-internal:///(middleware)/./node_modules/next/dist/esm/server/async-storage/request-async-storage-wrapper.js:81:24)
+    at adapter (webpack-internal:///(middleware)/./node_modules/next/dist/esm/server/web/adapter.js:168:128) {
+  middleware: true
+}
+ ⨯ TypeError: Invalid URL
+    at createClient (./lib/supabase.ts:16:78)
+    at AuthProvider (./contexts/AuthContext.tsx:18:81)
+
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+
+ ⨯ TypeError: Invalid URL
+    at createClient (./lib/supabase.ts:16:78)
+    at AuthProvider (./contexts/AuthContext.tsx:18:81)
+ ⨯ TypeError: Invalid URL
+    at createClient (./lib/supabase.ts:16:78)
+    at AuthProvider (./contexts/AuthContext.tsx:18:81)
+ ⨯ TypeError: Invalid URL
+    at createClient (./lib/supabase.ts:16:78)
+    at AuthProvider (./contexts/AuthContext.tsx:18:81)
+ ⨯ TypeError: Invalid URL
+    at createClient (./lib/supabase.ts:16:78)
+    at AuthProvider (./contexts/AuthContext.tsx:18:81)
+
+
+ ⨯ TypeError: Invalid URL
+    at createClient (./lib/supabase.ts:16:78)
+    at AuthProvider (./contexts/AuthContext.tsx:18:81)
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ ⨯ TypeError: Invalid URL
+    at createClient (./lib/supabase.ts:16:78)
+    at AuthProvider (./contexts/AuthContext.tsx:18:81)
+<w> [webpack.cache.PackFileCacheStrategy] Serializing big strings (116kiB) impacts deserialization performance (consider using Buffer instead and decode when needed)
+ ⨯ TypeError: Invalid URL
+    at createClient (./lib/supabase.ts:16:78)
+    at AuthProvider (./contexts/AuthContext.tsx:18:81)
+
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ ✓ Compiled /debug/page in 120ms (1249 modules)
+ ✓ Compiled in 92ms (1263 modules)
+ ○ Compiling /auth/page ...
+
+
+ ⨯ TypeError: Invalid URL
+    at createClient (./lib/supabase.ts:16:78)
+    at AuthProvider (./contexts/AuthContext.tsx:18:81)
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+
+
+
+ ⨯ TypeError: Invalid URL
+    at createClient (./lib/supabase.ts:16:78)
+    at AuthProvider (./contexts/AuthContext.tsx:18:81)
+ ⨯ TypeError: Invalid URL
+    at createClient (./lib/supabase.ts:16:78)
+    at AuthProvider (./contexts/AuthContext.tsx:18:81)
+ ⨯ TypeError: Invalid URL
+    at createClient (./lib/supabase.ts:16:78)
+    at AuthProvider (./contexts/AuthContext.tsx:18:81)
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+
+
+
+ ⨯ TypeError: Invalid URL
+    at createClient (./lib/supabase.ts:16:78)
+    at AuthProvider (./contexts/AuthContext.tsx:18:81)
+ ⨯ TypeError: Invalid URL
+    at createClient (./lib/supabase.ts:16:78)
+    at AuthProvider (./contexts/AuthContext.tsx:18:81)
+ ⨯ TypeError: Invalid URL
+    at createClient (./lib/supabase.ts:16:78)
+    at AuthProvider (./contexts/AuthContext.tsx:18:81)
+ ⨯ TypeError: Invalid URL
+    at createClient (./lib/supabase.ts:16:78)
+    at AuthProvider (./contexts/AuthContext.tsx:18:81)
+ ⨯ TypeError: Invalid URL
+    at createClient (./lib/supabase.ts:16:78)
+    at AuthProvider (./contexts/AuthContext.tsx:18:81)
+ ⨯ TypeError: Invalid URL
+    at createClient (./lib/supabase.ts:16:78)
+    at AuthProvider (./contexts/AuthContext.tsx:18:81)
+ ⨯ TypeError: Invalid URL
+    at createClient (./lib/supabase.ts:16:78)
+    at AuthProvider (./contexts/AuthContext.tsx:18:81)
+ ⨯ TypeError: Invalid URL
+    at createClient (./lib/supabase.ts:16:78)
+    at AuthProvider (./contexts/AuthContext.tsx:18:81)
+ ⨯ TypeError: Invalid URL
+    at createClient (./lib/supabase.ts:16:78)
+    at AuthProvider (./contexts/AuthContext.tsx:18:81)
+ ⨯ TypeError: Invalid URL
+    at createClient (./lib/supabase.ts:16:78)
+    at AuthProvider (./contexts/AuthContext.tsx:18:81)
+
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ ⨯ TypeError: Invalid URL
+    at createClient (./lib/supabase.ts:16:78)
+    at AuthProvider (./contexts/AuthContext.tsx:18:81)
+ ⨯ TypeError: Invalid URL
+    at createClient (./lib/supabase.ts:16:78)
+    at AuthProvider (./contexts/AuthContext.tsx:18:81)
+
+ ⨯ TypeError: Invalid URL
+    at createClient (./lib/supabase.ts:16:78)
+    at AuthProvider (./contexts/AuthContext.tsx:18:81)
+ ⨯ TypeError: Invalid URL
+    at createClient (./lib/supabase.ts:16:78)
+    at AuthProvider (./contexts/AuthContext.tsx:18:81)
+ ⨯ TypeError: Invalid URL
+    at createClient (./lib/supabase.ts:16:78)
+    at AuthProvider (./contexts/AuthContext.tsx:18:81)
+
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ ⨯ contexts/AuthContext.tsx (54:10) @ useAuth
+ ⨯ Error: useAuth must be used within an AuthProvider
+    at useAuth (./contexts/AuthContext.tsx:52:15)
+    at Navigation (./components/layout/Navigation.tsx:22:93)
+[0m [90m 52 |[39m   [36mconst[39m context [33m=[39m useContext([33mAuthContext[39m)[0m
+[0m [90m 53 |[39m   [36mif[39m (context [33m===[39m undefined) {[0m
+[0m[31m[1m>[22m[39m[90m 54 |[39m     [36mthrow[39m [36mnew[39m [33mError[39m([32m'useAuth must be used within an AuthProvider'[39m)[0m
+[0m [90m    |[39m          [31m[1m^[22m[39m[0m
+[0m [90m 55 |[39m   }[0m
+[0m [90m 56 |[39m   [36mreturn[39m context[0m
+[0m [90m 57 |[39m }[0m
+   Reload env: .env.local
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+
+ ⨯ contexts/AuthContext.tsx (54:10) @ useAuth
+ ⨯ Error: useAuth must be used within an AuthProvider
+    at useAuth (./contexts/AuthContext.tsx:52:15)
+    at Navigation (./components/layout/Navigation.tsx:22:93)
+[0m [90m 52 |[39m   [36mconst[39m context [33m=[39m useContext([33mAuthContext[39m)[0m
+[0m [90m 53 |[39m   [36mif[39m (context [33m===[39m undefined) {[0m
+[0m[31m[1m>[22m[39m[90m 54 |[39m     [36mthrow[39m [36mnew[39m [33mError[39m([32m'useAuth must be used within an AuthProvider'[39m)[0m
+[0m [90m    |[39m          [31m[1m^[22m[39m[0m
+[0m [90m 55 |[39m   }[0m
+[0m [90m 56 |[39m   [36mreturn[39m context[0m
+[0m [90m 57 |[39m }[0m
+ ⨯ contexts/AuthContext.tsx (54:10) @ useAuth
+ ⨯ Error: useAuth must be used within an AuthProvider
+    at useAuth (./contexts/AuthContext.tsx:52:15)
+    at Navigation (./components/layout/Navigation.tsx:22:93)
+[0m [90m 52 |[39m   [36mconst[39m context [33m=[39m useContext([33mAuthContext[39m)[0m
+[0m [90m 53 |[39m   [36mif[39m (context [33m===[39m undefined) {[0m
+[0m[31m[1m>[22m[39m[90m 54 |[39m     [36mthrow[39m [36mnew[39m [33mError[39m([32m'useAuth must be used within an AuthProvider'[39m)[0m
+[0m [90m    |[39m          [31m[1m^[22m[39m[0m
+[0m [90m 55 |[39m   }[0m
+[0m [90m 56 |[39m   [36mreturn[39m context[0m
+[0m [90m 57 |[39m }[0m
+ ⨯ contexts/AuthContext.tsx (54:10) @ useAuth
+ ⨯ Error: useAuth must be used within an AuthProvider
+    at useAuth (./contexts/AuthContext.tsx:52:15)
+    at Navigation (./components/layout/Navigation.tsx:22:93)
+[0m [90m 52 |[39m   [36mconst[39m context [33m=[39m useContext([33mAuthContext[39m)[0m
+[0m [90m 53 |[39m   [36mif[39m (context [33m===[39m undefined) {[0m
+[0m[31m[1m>[22m[39m[90m 54 |[39m     [36mthrow[39m [36mnew[39m [33mError[39m([32m'useAuth must be used within an AuthProvider'[39m)[0m
+[0m [90m    |[39m          [31m[1m^[22m[39m[0m
+[0m [90m 55 |[39m   }[0m
+[0m [90m 56 |[39m   [36mreturn[39m context[0m
+[0m [90m 57 |[39m }[0m
+ ⨯ contexts/AuthContext.tsx (54:10) @ useAuth
+ ⨯ Error: useAuth must be used within an AuthProvider
+    at useAuth (./contexts/AuthContext.tsx:52:15)
+    at Navigation (./components/layout/Navigation.tsx:22:93)
+[0m [90m 52 |[39m   [36mconst[39m context [33m=[39m useContext([33mAuthContext[39m)[0m
+[0m [90m 53 |[39m   [36mif[39m (context [33m===[39m undefined) {[0m
+[0m[31m[1m>[22m[39m[90m 54 |[39m     [36mthrow[39m [36mnew[39m [33mError[39m([32m'useAuth must be used within an AuthProvider'[39m)[0m
+[0m [90m    |[39m          [31m[1m^[22m[39m[0m
+[0m [90m 55 |[39m   }[0m
+[0m [90m 56 |[39m   [36mreturn[39m context[0m
+[0m [90m 57 |[39m }[0m
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+
+
+
+
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<w> [webpack.cache.PackFileCacheStrategy] Serializing big strings (116kiB) impacts deserialization performance (consider using Buffer instead and decode when needed)
+
+
+
+
+
+
+
+
+
+
+
+
+
+ ⨯ ./node_modules/next/dist/lib/require-instrumentation-client.js:11:0
+Module not found: Can't resolve 'private-next-instrumentation-client'
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./node_modules/next/dist/client/page-bootstrap.js
+./node_modules/next/dist/client/next-dev.js
+ ⨯ ./node_modules/next/dist/lib/require-instrumentation-client.js:11:0
+Module not found: Can't resolve 'private-next-instrumentation-client'
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./node_modules/next/dist/client/page-bootstrap.js
+./node_modules/next/dist/client/next-dev.js
+[?25h
