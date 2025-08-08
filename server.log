@@ -1,0 +1,24 @@
+
+> big-fluffy-ai@0.1.0 dev
+> next dev
+
+   ▲ Next.js 14.0.0
+   - Local:        http://localhost:3000
+
+ ✓ Ready in 1112ms
+ ○ Compiling /page ...
+ ✓ Compiled /page in 1658ms (1093 modules)
+ ✓ Compiled in 229ms (552 modules)
+ ✓ Compiled /not-found in 230ms (1075 modules)
+ ✓ Compiled in 167ms (552 modules)
+ ✓ Compiled in 370ms (1084 modules)
+ ✓ Compiled /not-found in 199ms (1089 modules)
+ ✓ Compiled in 206ms (1084 modules)
+ ✓ Compiled in 369ms (1084 modules)
+ ✓ Compiled in 176ms (1086 modules)
+ ✓ Compiled in 210ms (1084 modules)
+ ✓ Compiled in 234ms (1084 modules)
+ ✓ Compiled in 415ms (1084 modules)
+ ✓ Compiled /not-found in 362ms (1089 modules)
+ ✓ Compiled in 209ms (552 modules)
+ ✓ Compiled in 338ms (1096 modules)
