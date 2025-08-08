@@ -1,0 +1,18 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#0a0a0a"/>
+  <rect x="50" y="50" width="1100" height="530" rx="12" fill="none" stroke="#8b5cf6" stroke-width="2" stroke-dasharray="8,8"/>
+  
+  <!-- AI Icon -->
+  <g transform="translate(550, 250)">
+    <circle cx="50" cy="50" r="40" fill="#8b5cf6" opacity="0.2"/>
+    <path d="M30 35h40v30H30z" fill="none" stroke="#8b5cf6" stroke-width="2"/>
+    <circle cx="38" cy="45" r="3" fill="#8b5cf6"/>
+    <circle cx="62" cy="45" r="3" fill="#8b5cf6"/>
+    <path d="M35 55h30" stroke="#8b5cf6" stroke-width="2" stroke-linecap="round"/>
+  </g>
+  
+  <!-- Text -->
+  <text x="600" y="350" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="24" font-weight="bold">Blog Image Placeholder</text>
+  <text x="600" y="380" text-anchor="middle" fill="#8b5cf6" font-family="Arial, sans-serif" font-size="16">1200 × 630 pixels</text>
+  <text x="600" y="420" text-anchor="middle" fill="#666666" font-family="Arial, sans-serif" font-size="14">Replace with actual blog post images</text>
+</svg>

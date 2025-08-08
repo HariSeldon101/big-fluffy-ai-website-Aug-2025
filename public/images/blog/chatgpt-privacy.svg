@@ -1,0 +1,79 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Gradient -->
+  <defs>
+    <linearGradient id="bg5" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0a0a;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#7c2d12;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#991b1b;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="accent5" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#ef4444;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#dc2626;stop-opacity:0.8" />
+    </linearGradient>
+  </defs>
+  
+  <rect width="1200" height="630" fill="url(#bg5)"/>
+  
+  <!-- Privacy pattern background -->
+  <g opacity="0.1" stroke="#ef4444" stroke-width="1" fill="none">
+    <circle cx="200" cy="200" r="15"/>
+    <circle cx="400" cy="180" r="12"/>
+    <circle cx="800" cy="220" r="18"/>
+    <path d="M150 300 Q200 280 250 300 Q300 320 350 300"/>
+  </g>
+  
+  <!-- Main Content Area -->
+  <rect x="100" y="150" width="1000" height="330" rx="20" fill="rgba(239, 68, 68, 0.05)" stroke="rgba(239, 68, 68, 0.2)" stroke-width="1"/>
+  
+  <!-- ChatGPT Logo -->
+  <g transform="translate(180, 240)">
+    <circle cx="50" cy="50" r="45" fill="url(#accent5)"/>
+    <path d="M30 35h40v30H30z" fill="none" stroke="white" stroke-width="2.5" rx="4"/>
+    <circle cx="38" cy="45" r="3" fill="white"/>
+    <circle cx="62" cy="45" r="3" fill="white"/>
+    <path d="M35 55h30" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+  </g>
+  
+  <!-- Privacy Shield -->
+  <g transform="translate(350, 220)">
+    <path d="M40 25 Q40 15 50 15 L70 15 Q80 15 80 25 L80 55 Q80 70 65 80 L60 85 Q55 80 40 70 L40 25 Z" fill="#dc2626" opacity="0.8"/>
+    
+    <!-- Lock inside shield -->
+    <rect x="52" y="40" width="16" height="20" rx="2" fill="white"/>
+    <path d="M55 40 Q55 35 60 35 Q65 35 65 40" fill="none" stroke="white" stroke-width="2"/>
+    <circle cx="60" cy="47" r="2" fill="#dc2626"/>
+  </g>
+  
+  <!-- Warning symbols -->
+  <g transform="translate(500, 250)">
+    <polygon points="15,10 25,30 5,30" fill="#ef4444" opacity="0.6"/>
+    <line x1="15" y1="18" x2="15" y2="24" stroke="white" stroke-width="2" stroke-linecap="round"/>
+    <circle cx="15" cy="27" r="1" fill="white"/>
+  </g>
+  
+  <!-- Search results mockup -->
+  <g transform="translate(600, 240)">
+    <rect x="0" y="0" width="120" height="80" rx="8" fill="rgba(239, 68, 68, 0.1)" stroke="#ef4444"/>
+    
+    <!-- Search results lines -->
+    <line x1="10" y1="15" x2="70" y2="15" stroke="#ef4444" stroke-width="2"/>
+    <line x1="10" y1="25" x2="90" y2="25" stroke="#ef4444" stroke-width="1" opacity="0.6"/>
+    <line x1="10" y1="30" x2="60" y2="30" stroke="#ef4444" stroke-width="1" opacity="0.6"/>
+    
+    <line x1="10" y1="45" x2="80" y2="45" stroke="#ef4444" stroke-width="2"/>
+    <line x1="10" y1="55" x2="70" y2="55" stroke="#ef4444" stroke-width="1" opacity="0.6"/>
+    <line x1="10" y1="60" x2="85" y2="60" stroke="#ef4444" stroke-width="1" opacity="0.6"/>
+    
+    <!-- Search icon -->
+    <circle cx="100" cy="15" r="6" fill="none" stroke="#ef4444" stroke-width="1.5"/>
+    <line x1="104" y1="19" x2="108" y2="23" stroke="#ef4444" stroke-width="1.5"/>
+  </g>
+  
+  <!-- Connection arrows -->
+  <path d="M320 285 Q360 270 400 285" stroke="#ef4444" stroke-width="2" fill="none" stroke-dasharray="4,4"/>
+  <path d="M480 285 Q540 270 600 285" stroke="#ef4444" stroke-width="2" fill="none" stroke-dasharray="4,4"/>
+  
+  <!-- Title Text -->
+  <text x="600" y="520" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="30" font-weight="bold">ChatGPT Privacy</text>
+  <text x="600" y="550" text-anchor="middle" fill="#ef4444" font-family="Arial, sans-serif" font-size="18">What You Need to Know</text>
+</svg>

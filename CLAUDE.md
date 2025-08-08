@@ -126,3 +126,9 @@ NEXTAUTH_URL=
 - Optimize images with NextJS Image component
 - Implement proper loading states
 - Follow Shadcn UI patterns for consistent styling
+
+## Contact Information
+- **Email**: woof@bigfluffy.ai
+- **Phone**: +44 (0) 7727 847722
+- **Address**: London, UK
+- **Domain**: bigfluffy.ai

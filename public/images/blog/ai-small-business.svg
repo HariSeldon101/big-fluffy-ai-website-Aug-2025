@@ -1,0 +1,96 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Gradient -->
+  <defs>
+    <linearGradient id="bg4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0a0a;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#064e3b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#065f46;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="accent4" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#10b981;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#059669;stop-opacity:0.8" />
+    </linearGradient>
+  </defs>
+  
+  <rect width="1200" height="630" fill="url(#bg4)"/>
+  
+  <!-- Business growth chart background -->
+  <g opacity="0.1" stroke="#10b981" stroke-width="2" fill="none">
+    <path d="M100 400 Q200 350 300 300 Q400 250 500 200"/>
+    <path d="M600 350 Q700 300 800 250 Q900 200 1000 150"/>
+  </g>
+  
+  <!-- Main Content Area -->
+  <rect x="100" y="150" width="1000" height="330" rx="20" fill="rgba(16, 185, 129, 0.05)" stroke="rgba(16, 185, 129, 0.2)" stroke-width="1"/>
+  
+  <!-- Small Business Building -->
+  <g transform="translate(180, 220)">
+    <rect x="20" y="40" width="60" height="60" fill="#10b981" opacity="0.7"/>
+    <polygon points="15,40 50,15 85,40" fill="#059669" opacity="0.8"/>
+    
+    <!-- Windows -->
+    <rect x="28" y="50" width="8" height="8" fill="white" opacity="0.8"/>
+    <rect x="42" y="50" width="8" height="8" fill="white" opacity="0.8"/>
+    <rect x="56" y="50" width="8" height="8" fill="white" opacity="0.8"/>
+    <rect x="28" y="70" width="8" height="8" fill="white" opacity="0.8"/>
+    <rect x="56" y="70" width="8" height="8" fill="white" opacity="0.8"/>
+    
+    <!-- Door -->
+    <rect x="42" y="70" width="8" height="30" fill="#065f46"/>
+    <circle cx="48" cy="85" r="1" fill="white"/>
+  </g>
+  
+  <!-- AI Robot -->
+  <g transform="translate(350, 240)">
+    <rect x="20" y="20" width="40" height="40" rx="8" fill="url(#accent4)"/>
+    <circle cx="30" cy="35" r="3" fill="white"/>
+    <circle cx="50" cy="35" r="3" fill="white"/>
+    <rect x="35" y="45" width="10" height="3" rx="1.5" fill="white"/>
+    
+    <!-- Robot body -->
+    <rect x="25" y="65" width="30" height="25" rx="5" fill="#10b981" opacity="0.8"/>
+    
+    <!-- Robot arms -->
+    <rect x="15" y="70" width="8" height="3" rx="1.5" fill="#10b981"/>
+    <rect x="57" y="70" width="8" height="3" rx="1.5" fill="#10b981"/>
+  </g>
+  
+  <!-- Connection line -->
+  <path d="M280 280 Q320 260 350 280" stroke="#10b981" stroke-width="2" fill="none" stroke-dasharray="3,3"/>
+  
+  <!-- Growth arrows -->
+  <g transform="translate(500, 250)">
+    <path d="M0 40 L40 0" stroke="#10b981" stroke-width="3" marker-end="url(#arrow4)"/>
+    <path d="M10 40 L50 0" stroke="#10b981" stroke-width="2" opacity="0.7" marker-end="url(#arrow4)"/>
+    <path d="M20 40 L60 0" stroke="#10b981" stroke-width="2" opacity="0.5" marker-end="url(#arrow4)"/>
+  </g>
+  
+  <!-- Arrow marker -->
+  <defs>
+    <marker id="arrow4" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#10b981"/>
+    </marker>
+  </defs>
+  
+  <!-- Business tools -->
+  <g transform="translate(650, 260)">
+    <!-- Calendar -->
+    <rect x="0" y="0" width="20" height="20" rx="2" fill="none" stroke="#10b981" stroke-width="1.5"/>
+    <line x1="5" y1="-3" x2="5" y2="3" stroke="#10b981" stroke-width="1.5"/>
+    <line x1="15" y1="-3" x2="15" y2="3" stroke="#10b981" stroke-width="1.5"/>
+    
+    <!-- Chat bubble -->
+    <ellipse cx="35" cy="10" rx="12" ry="8" fill="none" stroke="#059669" stroke-width="1.5"/>
+    <circle cx="30" cy="10" r="1" fill="#059669"/>
+    <circle cx="35" cy="10" r="1" fill="#059669"/>
+    <circle cx="40" cy="10" r="1" fill="#059669"/>
+    
+    <!-- Graph -->
+    <rect x="55" y="0" width="20" height="20" fill="none" stroke="#10b981" stroke-width="1.5"/>
+    <path d="M58 15 L62 10 L66 12 L72 5" stroke="#059669" stroke-width="2" fill="none"/>
+  </g>
+  
+  <!-- Title Text -->
+  <text x="600" y="520" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="30" font-weight="bold">AI for Small Business</text>
+  <text x="600" y="550" text-anchor="middle" fill="#10b981" font-family="Arial, sans-serif" font-size="18">Your Getting Started Guide</text>
+</svg>

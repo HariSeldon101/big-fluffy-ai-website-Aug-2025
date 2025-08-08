@@ -24,6 +24,9 @@ export default function Navigation() {
             <Link href="/services" className="text-foreground hover:text-primary-500 transition-colors">
               Services
             </Link>
+            <Link href="/blog" className="text-foreground hover:text-primary-500 transition-colors">
+              Blog
+            </Link>
             <Link href="/about" className="text-foreground hover:text-primary-500 transition-colors">
               About
             </Link>
@@ -73,6 +76,9 @@ export default function Navigation() {
               </Link>
               <Link href="/services" className="text-foreground hover:text-primary-500 transition-colors">
                 Services
+              </Link>
+              <Link href="/blog" className="text-foreground hover:text-primary-500 transition-colors">
+                Blog
               </Link>
               <Link href="/about" className="text-foreground hover:text-primary-500 transition-colors">
                 About

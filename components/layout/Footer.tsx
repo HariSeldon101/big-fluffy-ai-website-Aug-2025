@@ -20,15 +20,17 @@ export default function Footer() {
             <div className="space-y-3">
               <div className="flex items-center text-gray-300">
                 <Mail size={16} className="mr-3 text-primary-500" />
-                <span>hello@bigfluffyai.com</span>
+                <a href="mailto:woof@bigfluffy.ai" className="hover:text-primary-500 transition-colors">
+                  woof@bigfluffy.ai
+                </a>
               </div>
               <div className="flex items-center text-gray-300">
                 <Phone size={16} className="mr-3 text-primary-500" />
-                <span>+1 (555) 123-4567</span>
+                <span>+44 (0) 7727 847722</span>
               </div>
               <div className="flex items-center text-gray-300">
                 <MapPin size={16} className="mr-3 text-primary-500" />
-                <span>San Francisco, CA</span>
+                <span>London, UK</span>
               </div>
             </div>
           </div>

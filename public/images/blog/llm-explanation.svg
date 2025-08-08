@@ -1,0 +1,85 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Gradient -->
+  <defs>
+    <linearGradient id="bg3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0a0a;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#2d1b69;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1e1065;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="accent3" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#f59e0b;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#d97706;stop-opacity:0.8" />
+    </linearGradient>
+  </defs>
+  
+  <rect width="1200" height="630" fill="url(#bg3)"/>
+  
+  <!-- Neural network nodes background -->
+  <g opacity="0.15" fill="#f59e0b">
+    <circle cx="150" cy="200" r="4"/>
+    <circle cx="250" cy="180" r="4"/>
+    <circle cx="350" cy="220" r="4"/>
+    <circle cx="450" cy="200" r="4"/>
+    
+    <circle cx="150" cy="300" r="4"/>
+    <circle cx="250" cy="320" r="4"/>
+    <circle cx="350" cy="280" r="4"/>
+    <circle cx="450" cy="300" r="4"/>
+    
+    <!-- Connections -->
+    <line x1="150" y1="200" x2="250" y2="180" stroke="#f59e0b" stroke-width="1"/>
+    <line x1="250" y1="180" x2="350" y2="220" stroke="#f59e0b" stroke-width="1"/>
+    <line x1="150" y1="300" x2="350" y2="280" stroke="#f59e0b" stroke-width="1"/>
+  </g>
+  
+  <!-- Main Content Area -->
+  <rect x="100" y="150" width="1000" height="330" rx="20" fill="rgba(245, 158, 11, 0.05)" stroke="rgba(245, 158, 11, 0.2)" stroke-width="1"/>
+  
+  <!-- LLM Brain -->
+  <g transform="translate(200, 240)">
+    <circle cx="50" cy="50" r="45" fill="url(#accent3)"/>
+    
+    <!-- Brain-like pattern -->
+    <path d="M25 35 Q35 25 45 35 Q55 25 65 35 Q65 45 55 55 Q45 65 35 55 Q25 65 15 55 Q15 45 25 35 Z" 
+          fill="none" stroke="white" stroke-width="2"/>
+    <path d="M30 45 Q40 35 50 45 Q60 35 70 45" 
+          fill="none" stroke="white" stroke-width="1.5"/>
+    <path d="M30 55 Q40 45 50 55" 
+          fill="none" stroke="white" stroke-width="1.5"/>
+  </g>
+  
+  <!-- Text processing visualization -->
+  <g transform="translate(400, 260)">
+    <!-- Input text -->
+    <rect x="0" y="10" width="80" height="30" rx="15" fill="rgba(245, 158, 11, 0.2)" stroke="#f59e0b"/>
+    <text x="40" y="28" text-anchor="middle" fill="#f59e0b" font-family="Arial, sans-serif" font-size="12">INPUT</text>
+    
+    <!-- Arrow -->
+    <path d="M90 25 L120 25" stroke="#f59e0b" stroke-width="2" marker-end="url(#arrow3)"/>
+    
+    <!-- Output text -->
+    <rect x="130" y="10" width="80" height="30" rx="15" fill="rgba(245, 158, 11, 0.3)" stroke="#d97706"/>
+    <text x="170" y="28" text-anchor="middle" fill="#d97706" font-family="Arial, sans-serif" font-size="12">OUTPUT</text>
+  </g>
+  
+  <!-- Arrow marker -->
+  <defs>
+    <marker id="arrow3" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#f59e0b"/>
+    </marker>
+  </defs>
+  
+  <!-- Pattern recognition symbols -->
+  <g transform="translate(600, 250)">
+    <text x="0" y="20" fill="#f59e0b" font-family="Arial, sans-serif" font-size="24">The</text>
+    <text x="40" y="20" fill="#d97706" font-family="Arial, sans-serif" font-size="24">cat</text>
+    <text x="80" y="20" fill="#f59e0b" font-family="Arial, sans-serif" font-size="24">sat</text>
+    <text x="0" y="50" fill="#d97706" font-family="Arial, sans-serif" font-size="24">on</text>
+    <text x="30" y="50" fill="#f59e0b" font-family="Arial, sans-serif" font-size="24">the</text>
+    <text x="70" y="50" fill="#d97706" font-family="Arial, sans-serif" font-size="24">mat</text>
+  </g>
+  
+  <!-- Title Text -->
+  <text x="600" y="520" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="32" font-weight="bold">LLM Explained</text>
+  <text x="600" y="550" text-anchor="middle" fill="#f59e0b" font-family="Arial, sans-serif" font-size="18">Large Language Models Simplified</text>
+</svg>

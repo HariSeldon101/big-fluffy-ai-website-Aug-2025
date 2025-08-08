@@ -123,6 +123,55 @@ export interface Database {
           updated_at?: string
         }
       }
+      blog_posts: {
+        Row: {
+          id: string
+          title: string
+          slug: string
+          excerpt: string
+          content: string
+          featured_image?: string
+          author: string
+          published_at: string
+          updated_at: string
+          tags: string[]
+          meta_title?: string
+          meta_description?: string
+          is_published: boolean
+          view_count: number
+          reading_time: number
+          created_at: string
+        }
+        Insert: {
+          title: string
+          slug: string
+          excerpt: string
+          content: string
+          featured_image?: string
+          author?: string
+          published_at?: string
+          tags?: string[]
+          meta_title?: string
+          meta_description?: string
+          is_published?: boolean
+          reading_time?: number
+        }
+        Update: {
+          title?: string
+          slug?: string
+          excerpt?: string
+          content?: string
+          featured_image?: string
+          author?: string
+          published_at?: string
+          tags?: string[]
+          meta_title?: string
+          meta_description?: string
+          is_published?: boolean
+          reading_time?: number
+          updated_at?: string
+        }
+      }
     }
   }
 }
