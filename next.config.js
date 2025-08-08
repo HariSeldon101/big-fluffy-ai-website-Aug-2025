@@ -1,6 +1,4 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-  // Remove image optimization settings for Vercel deployment
-}
+const nextConfig = {}
 
 module.exports = nextConfig
