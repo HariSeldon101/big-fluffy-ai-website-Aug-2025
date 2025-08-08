@@ -11,6 +11,27 @@ body {
   color: #ffffff;
 }
 
+/* Ensure Calendly widget inherits dark background */
+.calendly-inline-widget,
+.calendly-inline-widget iframe,
+.calendly-embed-wrap,
+.calendly-embed-wrap iframe {
+  background-color: #0a0a0a !important;
+}
+
+/* Ensure full-bleed fill and no borders inside embed */
+.calendly-embed-wrap iframe {
+  width: 100% !important;
+  height: 100% !important;
+  border: 0 !important;
+  display: block;
+}
+
+/* Guardrails: prevent any inner scrollbars/gutters around the iframe */
+.calendly-embed-wrap {
+  overflow: hidden;
+}
+
 /* Blog-specific styles */
 .blog-content h1 {
   @apply text-3xl font-bold text-foreground mb-6 mt-8 first:mt-0;

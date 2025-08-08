@@ -1,24 +1,11 @@
--- Insert 5 blog posts with teen-friendly AI content
-INSERT INTO blog_posts (
-  title, 
-  slug, 
-  excerpt, 
-  content, 
-  featured_image, 
-  author, 
-  published_at, 
-  tags, 
-  meta_title, 
-  meta_description, 
-  reading_time
-) VALUES
+-- Update existing blog posts with professional LinkedIn-style content
 
 -- Post 1: ChatGPT 5 Productivity
-(
-  'ChatGPT 5: The Executive Assistant You Never Knew You Needed',
-  'chatgpt-5-daily-productivity-tips',
-  'How the latest iteration of OpenAI''s flagship model is reshaping workplace productivity and personal efficiency across industries.',
-  '# ChatGPT 5: The Executive Assistant You Never Knew You Needed
+UPDATE blog_posts 
+SET 
+  title = 'ChatGPT 5: The Executive Assistant You Never Knew You Needed',
+  excerpt = 'How the latest iteration of OpenAI''s flagship model is reshaping workplace productivity and personal efficiency across industries.',
+  content = '# ChatGPT 5: The Executive Assistant You Never Knew You Needed
 
 The release of ChatGPT 5 marks a significant inflection point in workplace productivity tools, representing what could be the most substantial upgrade to personal efficiency since the introduction of email. Unlike its predecessors, ChatGPT 5 demonstrates an almost uncanny ability to understand context, maintain coherent dialogue threads, and deliver responses that feel less like algorithmic outputs and more like insights from a well-informed colleague.
 
@@ -37,21 +24,18 @@ The implications extend far beyond individual productivity. Early adopters in pr
 **Verification Remains Critical**: While ChatGPT 5''s accuracy has improved dramatically, maintaining a healthy skepticism and fact-checking important information remains essential.
 
 **Competitive Advantage Window**: Organizations that effectively integrate AI-assisted workflows now may gain significant advantages over those that delay adoption.',
-  '/images/blog/chatgpt-productivity.jpg',
-  'Big Fluffy AI Team',
-  '2024-12-15 10:00:00+00',
-  ARRAY['ChatGPT', 'Productivity', 'Enterprise AI', 'Workplace Tools'],
-  'ChatGPT 5 for Enterprise Productivity | Big Fluffy AI',
-  'How ChatGPT 5 is transforming workplace productivity and efficiency across industries. Strategic implementation guide for business leaders.',
-  8
-),
+  tags = ARRAY['ChatGPT', 'Productivity', 'Enterprise AI', 'Workplace Tools'],
+  meta_title = 'ChatGPT 5 for Enterprise Productivity | Big Fluffy AI',
+  meta_description = 'How ChatGPT 5 is transforming workplace productivity and efficiency across industries. Strategic implementation guide for business leaders.',
+  reading_time = 5
+WHERE slug = 'chatgpt-5-daily-productivity-tips';
 
--- Post 2: Open Source AI for Companies
-(
-  'The Open Source AI Revolution: Why Enterprise Leaders Should Pay Attention',
-  'open-source-ai-models-private-companies',
-  'OpenAI''s strategic pivot toward open source models represents a fundamental shift in enterprise AI adoption, with implications that extend far beyond Silicon Valley.',
-  '# The Open Source AI Revolution: Why Enterprise Leaders Should Pay Attention
+-- Post 2: Open Source AI
+UPDATE blog_posts 
+SET 
+  title = 'The Open Source AI Revolution: Why Enterprise Leaders Should Pay Attention',
+  excerpt = 'OpenAI''s strategic pivot toward open source models represents a fundamental shift in enterprise AI adoption, with implications that extend far beyond Silicon Valley.',
+  content = '# The Open Source AI Revolution: Why Enterprise Leaders Should Pay Attention
 
 OpenAI''s recent embrace of open source models represents more than a strategic pivot—it signals a democratization of enterprise AI that could reshape competitive landscapes across industries. This shift from proprietary "black box" solutions to transparent, customizable models addresses three critical pain points that have long hindered widespread AI adoption: data sovereignty, cost predictability, and compliance requirements.
 
@@ -70,21 +54,18 @@ The economic argument proves equally compelling. While cloud-based AI services o
 **Customization Depth**: Organizations can modify models for industry-specific use cases rather than adapting workflows to fit generic AI tools.
 
 **Infrastructure Investment**: Success requires significant upfront investment in technical talent and computing infrastructure, making this approach most suitable for organizations with existing technical capabilities.',
-  '/images/blog/open-source-ai.jpg',
-  'Big Fluffy AI Team',
-  '2024-12-10 14:00:00+00',
-  ARRAY['Open Source', 'Enterprise AI', 'Data Sovereignty', 'Strategic Planning'],
-  'Open Source AI Models for Enterprise | Big Fluffy AI',
-  'Strategic analysis of open source AI models and their implications for enterprise data sovereignty, cost management, and competitive advantage.',
-  7
-),
+  tags = ARRAY['Open Source', 'Enterprise AI', 'Data Sovereignty', 'Strategic Planning'],
+  meta_title = 'Open Source AI Models for Enterprise | Big Fluffy AI',
+  meta_description = 'Strategic analysis of open source AI models and their implications for enterprise data sovereignty, cost management, and competitive advantage.',
+  reading_time = 5
+WHERE slug = 'open-source-ai-models-private-companies';
 
 -- Post 3: LLM Primer
-(
-  'Large Language Models Demystified: A Technical Executive''s Guide',
-  'llm-primer-how-large-language-models-work',
-  'Understanding the architectural foundations and business implications of Large Language Models in an era where AI literacy has become essential for strategic decision-making.',
-  '# Large Language Models Demystified: A Technical Executive''s Guide
+UPDATE blog_posts 
+SET 
+  title = 'Large Language Models Demystified: A Technical Executive''s Guide',
+  excerpt = 'Understanding the architectural foundations and business implications of Large Language Models in an era where AI literacy has become essential for strategic decision-making.',
+  content = '# Large Language Models Demystified: A Technical Executive''s Guide
 
 Large Language Models have evolved from research curiosities to business-critical infrastructure faster than most organizations anticipated. Yet despite their ubiquity in enterprise applications, the fundamental mechanics behind LLMs remain opaque to many decision-makers. Understanding these systems is no longer optional—it''s become as essential as grasping cloud computing was a decade ago.
 
@@ -103,21 +84,18 @@ The business implications extend far beyond simple text generation. LLMs excel a
 **Training vs. Inference**: The expensive training phase happens once, but inference costs scale with usage—this distinction affects budgeting and vendor selection decisions.
 
 **Quality Assurance Critical**: LLM outputs require systematic validation processes, especially for mission-critical applications where accuracy and consistency are paramount.',
-  '/images/blog/llm-explanation.jpg',
-  'Big Fluffy AI Team',
-  '2024-12-05 16:00:00+00',
-  ARRAY['LLM', 'Technical Leadership', 'AI Architecture', 'Executive Education'],
-  'Large Language Models for Technical Executives | Big Fluffy AI',
-  'Executive guide to understanding Large Language Model architecture, capabilities, and business implications for strategic AI decision-making.',
-  9
-),
+  tags = ARRAY['LLM', 'Technical Leadership', 'AI Architecture', 'Executive Education'],
+  meta_title = 'Large Language Models for Technical Executives | Big Fluffy AI',
+  meta_description = 'Executive guide to understanding Large Language Model architecture, capabilities, and business implications for strategic AI decision-making.',
+  reading_time = 5
+WHERE slug = 'llm-primer-how-large-language-models-work';
 
--- Post 4: AI for Small Business
-(
-  'SMB AI Adoption: A Pragmatic Implementation Framework',
-  'getting-started-ai-small-business',
-  'Small and medium businesses are discovering that AI implementation doesn''t require Silicon Valley budgets or technical teams—just strategic thinking and the right approach.',
-  '# SMB AI Adoption: A Pragmatic Implementation Framework
+-- Post 4: SMB AI Implementation
+UPDATE blog_posts 
+SET 
+  title = 'SMB AI Adoption: A Pragmatic Implementation Framework',
+  excerpt = 'Small and medium businesses are discovering that AI implementation doesn''t require Silicon Valley budgets or technical teams—just strategic thinking and the right approach.',
+  content = '# SMB AI Adoption: A Pragmatic Implementation Framework
 
 The AI revolution has reached main street, and small to medium-sized businesses are discovering that artificial intelligence implementation doesn''t require venture capital funding or dedicated data science teams. What it does require is strategic thinking, realistic expectations, and a methodical approach to identifying where automation can deliver measurable value. The businesses that thrive in the next decade won''t necessarily be the most technically sophisticated—they''ll be the ones that most effectively integrate AI tools into their existing operations.
 
@@ -136,21 +114,18 @@ The implementation framework that drives success follows a predictable pattern: 
 **Integration Over Innovation**: Successful SMB AI adoption emphasizes seamless integration with existing workflows rather than revolutionary process changes.
 
 **Human-AI Collaboration**: The most effective implementations enhance human capabilities rather than replacing them, maintaining the personal touch that often differentiates smaller businesses.',
-  '/images/blog/ai-small-business.jpg',
-  'Big Fluffy AI Team',
-  '2024-11-30 12:00:00+00',
-  ARRAY['SMB', 'AI Implementation', 'Operational Efficiency', 'Digital Transformation'],
-  'AI Implementation Framework for SMBs | Big Fluffy AI',
-  'Practical framework for small and medium business AI adoption, focusing on operational efficiency and measurable ROI.',
-  10
-),
+  tags = ARRAY['SMB', 'AI Implementation', 'Operational Efficiency', 'Digital Transformation'],
+  meta_title = 'AI Implementation Framework for SMBs | Big Fluffy AI',
+  meta_description = 'Practical framework for small and medium business AI adoption, focusing on operational efficiency and measurable ROI.',
+  reading_time = 5
+WHERE slug = 'getting-started-ai-small-business';
 
--- Post 5: ChatGPT Privacy Concerns
-(
-  'Enterprise AI Privacy: Navigating the ChatGPT Data Sovereignty Challenge',
-  'chatgpt-privacy-search-results-concerns',
-  'As AI conversations increasingly surface in search results, enterprise leaders must understand the privacy implications and data governance requirements of conversational AI platforms.',
-  '# Enterprise AI Privacy: Navigating the ChatGPT Data Sovereignty Challenge
+-- Post 5: Enterprise AI Privacy
+UPDATE blog_posts 
+SET 
+  title = 'Enterprise AI Privacy: Navigating the ChatGPT Data Sovereignty Challenge',
+  excerpt = 'As AI conversations increasingly surface in search results, enterprise leaders must understand the privacy implications and data governance requirements of conversational AI platforms.',
+  content = '# Enterprise AI Privacy: Navigating the ChatGPT Data Sovereignty Challenge
 
 The emergence of AI conversations in search engine results has created a new category of enterprise risk that extends far beyond traditional data governance frameworks. As organizations integrate conversational AI platforms into their operations, the distinction between private consultation and public disclosure has become increasingly nuanced. Understanding these boundaries isn''t just a technical concern—it''s become essential for compliance, competitive advantage, and risk management.
 
@@ -169,11 +144,8 @@ The solution lies not in avoiding these powerful tools but in implementing struc
 **Policy Before Practice**: Establish enterprise AI usage policies before widespread adoption to prevent inadvertent disclosure of sensitive information.
 
 **Training Investment Required**: Regular employee education on AI privacy implications and proper usage protocols is essential for effective risk management.',
-  '/images/blog/chatgpt-privacy.jpg',
-  'Big Fluffy AI Team',
-  '2024-11-25 09:00:00+00',
-  ARRAY['Enterprise Privacy', 'Data Governance', 'AI Compliance', 'Risk Management'],
-  'Enterprise AI Privacy and Data Governance | Big Fluffy AI',
-  'Strategic guide to managing enterprise AI privacy risks, data sovereignty challenges, and compliance requirements for conversational AI platforms.',
-  6
-);
+  tags = ARRAY['Enterprise Privacy', 'Data Governance', 'AI Compliance', 'Risk Management'],
+  meta_title = 'Enterprise AI Privacy and Data Governance | Big Fluffy AI',
+  meta_description = 'Strategic guide to managing enterprise AI privacy risks, data sovereignty challenges, and compliance requirements for conversational AI platforms.',
+  reading_time = 5
+WHERE slug = 'chatgpt-privacy-search-results-concerns';

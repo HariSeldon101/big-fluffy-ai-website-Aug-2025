@@ -6,6 +6,7 @@ import BlogList from '@/components/blog/BlogList'
 import { Calendar, Filter, Search } from 'lucide-react'
 import Navigation from '@/components/layout/Navigation'
 import Footer from '@/components/layout/Footer'
+import { getOverridesMap } from '@/lib/blog/overrides'
 
 interface BlogPost {
   id: string
@@ -58,7 +59,13 @@ export default function BlogPage() {
 
       if (error) throw error
 
-      setPosts(data || [])
+      const overrides = getOverridesMap()
+      const overridden = (data || []).map((post) => {
+        const o = overrides[post.slug]
+        return o ? { ...post, ...o } : post
+      })
+
+      setPosts(overridden)
       
       // Extract unique tags
       const tags = new Set<string>()

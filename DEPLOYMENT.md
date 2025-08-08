@@ -36,6 +36,7 @@ vercel --prod
 
 ## Step 3: Configure Environment Variables
 
+### Option A: Via Vercel Dashboard
 In your Vercel dashboard:
 1. Go to Project Settings → Environment Variables
 2. Add these variables:
@@ -47,6 +48,22 @@ SUPABASE_SERVICE_ROLE_KEY = your_production_supabase_service_role_key
 NEXTAUTH_SECRET = generate_random_32_char_string
 NEXTAUTH_URL = https://bigfluffy.ai
 ```
+
+### Option B: Via CLI (Recommended)
+After adding variables in dashboard, pull them locally:
+
+```bash
+# Install Vercel CLI if not installed
+npm i -g vercel
+
+# Link your project
+vercel link
+
+# Pull environment variables
+vercel env pull
+```
+
+This creates a local `.env` file with your Vercel environment variables.
 
 ## Step 4: Configure Domain
 
@@ -96,6 +113,29 @@ Add Google Analytics:
 2. Add tracking ID to environment variables
 3. Redeploy
 
+## Step 8: Calendly Setup
+
+1. Configure environment variables in Vercel:
+   - `NEXT_PUBLIC_CALENDLY_URL` → your public scheduling link, e.g. `https://calendly.com/YOUR_HANDLE/intro-15min`
+   - `CALENDLY_SIGNING_KEY` → Calendly webhook signing key (optional but recommended)
+   - `CALENDLY_EVENT_TYPE_URI` → Limit webhook processing to a specific event type (optional)
+
+2. Create the lead storage table in Supabase (run once):
+   - Open Supabase SQL Editor and run `supabase/calendly_leads.sql`
+
+3. Add a Calendly webhook pointing to your API endpoint:
+   - Webhook URL (prod): `https://bigfluffy.ai/api/calendly/webhook`
+   - Webhook URL (preview/local): `https://<your-preview-domain>/api/calendly/webhook` or `http://localhost:3000/api/calendly/webhook`
+   - Select events: at minimum, `invitee.created` and `invitee.canceled`
+   - Signing key: set and store in `CALENDLY_SIGNING_KEY`
+
+4. Validate the endpoint:
+   - Health check: open `/api/calendly/webhook` in a browser → should return `{ ok: true }`
+   - After booking/canceling, check the `calendly_leads` table for upserts
+
+5. UTM tracking:
+   - The site automatically merges common UTM parameters (`utm_*`, `ref`, `gclid`, `fbclid`) into the Calendly URL for both the popup and `/book` page.
+
 ## Troubleshooting
 
 ### Build Errors:
@@ -125,6 +165,8 @@ Add Google Analytics:
 - [ ] Mobile responsiveness verified
 - [ ] Social sharing tested
 - [ ] Analytics configured (optional)
+- [ ] Calendly webhook configured
+- [ ] `calendly_leads` table created in Supabase
 
 ## Post-Launch Tasks
 

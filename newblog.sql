@@ -1,4 +1,10 @@
--- Insert 5 blog posts with teen-friendly AI content
+-- Delete existing blog posts and insert new professional content
+-- Run this in Supabase SQL Editor
+
+-- First, delete all existing blog posts
+DELETE FROM blog_posts;
+
+-- Insert new professional LinkedIn-style blog posts
 INSERT INTO blog_posts (
   title, 
   slug, 
@@ -43,7 +49,7 @@ The implications extend far beyond individual productivity. Early adopters in pr
   ARRAY['ChatGPT', 'Productivity', 'Enterprise AI', 'Workplace Tools'],
   'ChatGPT 5 for Enterprise Productivity | Big Fluffy AI',
   'How ChatGPT 5 is transforming workplace productivity and efficiency across industries. Strategic implementation guide for business leaders.',
-  8
+  5
 ),
 
 -- Post 2: Open Source AI for Companies
@@ -76,7 +82,7 @@ The economic argument proves equally compelling. While cloud-based AI services o
   ARRAY['Open Source', 'Enterprise AI', 'Data Sovereignty', 'Strategic Planning'],
   'Open Source AI Models for Enterprise | Big Fluffy AI',
   'Strategic analysis of open source AI models and their implications for enterprise data sovereignty, cost management, and competitive advantage.',
-  7
+  5
 ),
 
 -- Post 3: LLM Primer
@@ -109,7 +115,7 @@ The business implications extend far beyond simple text generation. LLMs excel a
   ARRAY['LLM', 'Technical Leadership', 'AI Architecture', 'Executive Education'],
   'Large Language Models for Technical Executives | Big Fluffy AI',
   'Executive guide to understanding Large Language Model architecture, capabilities, and business implications for strategic AI decision-making.',
-  9
+  5
 ),
 
 -- Post 4: AI for Small Business
@@ -142,7 +148,7 @@ The implementation framework that drives success follows a predictable pattern: 
   ARRAY['SMB', 'AI Implementation', 'Operational Efficiency', 'Digital Transformation'],
   'AI Implementation Framework for SMBs | Big Fluffy AI',
   'Practical framework for small and medium business AI adoption, focusing on operational efficiency and measurable ROI.',
-  10
+  5
 ),
 
 -- Post 5: ChatGPT Privacy Concerns
@@ -175,5 +181,5 @@ The solution lies not in avoiding these powerful tools but in implementing struc
   ARRAY['Enterprise Privacy', 'Data Governance', 'AI Compliance', 'Risk Management'],
   'Enterprise AI Privacy and Data Governance | Big Fluffy AI',
   'Strategic guide to managing enterprise AI privacy risks, data sovereignty challenges, and compliance requirements for conversational AI platforms.',
-  6
+  5
 );

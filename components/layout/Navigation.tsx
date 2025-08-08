@@ -18,19 +18,19 @@ export default function Navigation() {
           </Link>
           
           <div className="hidden md:flex space-x-8">
-            <Link href="/" className="text-foreground hover:text-primary-500 transition-colors">
+            <Link href="/" className="inline-flex items-center py-2 text-foreground hover:text-primary-500 transition-colors">
               Home
             </Link>
-            <Link href="/services" className="text-foreground hover:text-primary-500 transition-colors">
+            <Link href="/services" className="inline-flex items-center py-2 text-foreground hover:text-primary-500 transition-colors">
               Services
             </Link>
-            <Link href="/blog" className="text-foreground hover:text-primary-500 transition-colors">
+            <Link href="/blog" className="inline-flex items-center py-2 text-foreground hover:text-primary-500 transition-colors">
               Blog
             </Link>
-            <Link href="/about" className="text-foreground hover:text-primary-500 transition-colors">
+            <Link href="/about" className="inline-flex items-center py-2 text-foreground hover:text-primary-500 transition-colors">
               About
             </Link>
-            <Link href="/contact" className="text-foreground hover:text-primary-500 transition-colors">
+            <Link href="/contact" className="inline-flex items-center py-2 text-foreground hover:text-primary-500 transition-colors">
               Contact
             </Link>
             

@@ -1,8 +1,10 @@
+
 'use client'
 
 import { motion } from 'framer-motion'
 import { ArrowRight, Sparkles } from 'lucide-react'
 import { useEffect, useState } from 'react'
+import Link from 'next/link'
 
 interface Node {
   id: number
@@ -21,6 +23,18 @@ interface Connection {
 export default function HeroSection() {
   const [nodes, setNodes] = useState<Node[]>([])
   const [connections, setConnections] = useState<Connection[]>([])
+  const calendlyUrl = process.env.NEXT_PUBLIC_CALENDLY_URL || 'https://calendly.com/YOUR_HANDLE/intro-15min'
+  const [bookHref, setBookHref] = useState<string>('/book')
+
+  // Build a CTA link that preserves UTM params
+  useEffect(() => {
+    try {
+      const qs = window.location.search || ''
+      setBookHref(`/book${qs}`)
+    } catch {
+      setBookHref('/book')
+    }
+  }, [])
 
   useEffect(() => {
     // Create neural network nodes
@@ -232,10 +246,10 @@ export default function HeroSection() {
           transition={{ duration: 0.8, delay: 0.6 }}
           className="flex flex-col sm:flex-row gap-4 justify-center items-center"
         >
-          <button className="group bg-primary-600 hover:bg-primary-500 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 flex items-center">
-            Get Started Today
+          <Link href={bookHref} className="group bg-primary-600 hover:bg-primary-500 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 flex items-center">
+            Talk To Us
             <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={20} />
-          </button>
+          </Link>
           
           <button className="border border-primary-500 text-primary-500 hover:bg-primary-500/10 px-8 py-4 rounded-lg font-semibold transition-all duration-300">
             View Our Services
