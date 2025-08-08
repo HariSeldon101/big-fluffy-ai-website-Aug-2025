@@ -1,13 +1,5 @@
 {
-  "buildCommand": "npm run build",
-  "outputDirectory": "out",
   "framework": "nextjs",
-  "regions": ["iad1"],
-  "functions": {
-    "app/**/*.ts": {
-      "runtime": "nodejs18.x"
-    }
-  },
   "rewrites": [
     {
       "source": "/blog/:slug",
