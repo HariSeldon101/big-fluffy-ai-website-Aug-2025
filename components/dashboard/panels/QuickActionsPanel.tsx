@@ -40,7 +40,7 @@ export default function QuickActionsPanel({
     {
       icon: Calendar,
       label: 'Schedule Meeting',
-      color: 'bg-yellow-600 hover:bg-yellow-500',
+      color: 'bg-soft-pink-500 hover:bg-soft-pink-400',
       action: () => console.log('Schedule Meeting')
     },
     {

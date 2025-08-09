@@ -37,7 +37,7 @@ export default function RecentActivityPanel({
     },
     {
       icon: MessageCircle,
-      color: 'bg-yellow-600',
+      color: 'bg-dark-grey',
       title: 'Comment Added',
       description: 'John Doe commented on "API Integration" task',
       time: '6 hours ago',

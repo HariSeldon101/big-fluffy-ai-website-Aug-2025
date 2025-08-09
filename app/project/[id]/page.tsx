@@ -89,7 +89,7 @@ export default function ProjectDetailPage() {
 
   const statusColors = {
     planning: 'bg-blue-500/20 text-blue-400 border-blue-500/30',
-    in_progress: 'bg-yellow-500/20 text-yellow-400 border-yellow-500/30',
+    in_progress: 'bg-light-blue-500/20 text-light-blue-400 border-light-blue-500/30',
     completed: 'bg-green-500/20 text-green-400 border-green-500/30',
     on_hold: 'bg-red-500/20 text-red-400 border-red-500/30'
   }
@@ -189,7 +189,7 @@ export default function ProjectDetailPage() {
                         <div className="text-gray-400 text-sm">Completed</div>
                       </div>
                       <div className="text-center">
-                        <div className="text-2xl font-bold text-yellow-400">3</div>
+                        <div className="text-2xl font-bold text-light-blue-400">3</div>
                         <div className="text-gray-400 text-sm">In Progress</div>
                       </div>
                       <div className="text-center">
@@ -222,7 +222,7 @@ export default function ProjectDetailPage() {
                         </div>
                       </div>
                       <div className="flex items-center space-x-3 p-3 bg-gray-700/50 rounded-lg">
-                        <div className="w-8 h-8 bg-yellow-600 rounded-full flex items-center justify-center">
+                        <div className="w-8 h-8 bg-light-blue-500 rounded-full flex items-center justify-center">
                           <Settings size={16} className="text-white" />
                         </div>
                         <div>
@@ -258,7 +258,7 @@ export default function ProjectDetailPage() {
                         </div>
                       </div>
                       <div className="flex items-center space-x-3">
-                        <div className="w-8 h-8 bg-yellow-600 rounded-full flex items-center justify-center">
+                        <div className="w-8 h-8 bg-light-blue-500 rounded-full flex items-center justify-center">
                           <span className="text-white text-sm font-semibold">MJ</span>
                         </div>
                         <div>
@@ -278,7 +278,7 @@ export default function ProjectDetailPage() {
                           <p className="text-white text-sm">Beta Release</p>
                           <p className="text-gray-400 text-xs">Feb 15, 2024</p>
                         </div>
-                        <div className="w-2 h-2 bg-yellow-500 rounded-full"></div>
+                        <div className="w-2 h-2 bg-light-blue-500 rounded-full"></div>
                       </div>
                       <div className="flex justify-between items-center p-3 bg-gray-700/50 rounded-lg">
                         <div>

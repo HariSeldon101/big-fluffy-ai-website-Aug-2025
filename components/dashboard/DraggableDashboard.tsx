@@ -225,7 +225,7 @@ export default function DraggableDashboard() {
           <h2 className="text-xl font-bold text-white">Dashboard</h2>
           <div className="flex items-center space-x-2">
             {editMode && (
-              <span className="text-yellow-400 text-sm animate-pulse">
+              <span className="text-light-blue-400 text-sm animate-pulse">
                 ✏️ Edit Mode - Drag panels to rearrange
               </span>
             )}
@@ -255,7 +255,7 @@ export default function DraggableDashboard() {
             onClick={() => setEditMode(!editMode)}
             className={`p-2 rounded transition-colors ${
               editMode
-                ? 'bg-yellow-600 text-white'
+                ? 'bg-soft-pink-500 text-white'
                 : 'bg-gray-700 text-gray-400 hover:text-white'
             }`}
             title="Toggle Edit Mode"

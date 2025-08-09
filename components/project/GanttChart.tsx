@@ -156,7 +156,7 @@ export default function GanttChart({ projectId }: GanttChartProps) {
 
   const priorityColors = {
     high: 'bg-red-100 text-red-800',
-    medium: 'bg-yellow-100 text-yellow-800',
+    medium: 'bg-light-blue-100 text-light-blue-800',
     low: 'bg-green-100 text-green-800'
   }
 

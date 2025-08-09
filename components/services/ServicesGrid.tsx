@@ -34,7 +34,7 @@ const services = [
     icon: Rocket,
     title: 'Project Implementation',
     description: 'End-to-end AI solution deployment with seamless integration into existing systems.',
-    color: 'from-orange-500 to-red-500'
+    color: 'from-light-blue-500 to-light-blue-600'
   },
   {
     icon: Users,
@@ -46,7 +46,7 @@ const services = [
     icon: GraduationCap,
     title: 'AI Training',
     description: 'Comprehensive training programs to upskill your team in AI technologies and best practices.',
-    color: 'from-yellow-500 to-orange-500'
+    color: 'from-soft-pink-400 to-soft-pink-500'
   }
 ]
 

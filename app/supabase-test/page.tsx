@@ -176,7 +176,7 @@ export default function SupabaseTestPage() {
               <button
                 onClick={testTrigger}
                 disabled={loading}
-                className="w-full bg-yellow-600 text-white py-2 rounded-lg hover:bg-yellow-500 disabled:opacity-50"
+                className="w-full bg-soft-pink-500 text-white py-2 rounded-lg hover:bg-soft-pink-400 disabled:opacity-50"
               >
                 {loading ? 'Testing...' : 'Test Trigger Function'}
               </button>
@@ -206,9 +206,9 @@ export default function SupabaseTestPage() {
           </div>
         </div>
         
-        <div className="mt-8 p-4 bg-yellow-900/20 border border-yellow-500 rounded-lg">
-          <h3 className="text-yellow-400 font-semibold mb-2">Important Notes:</h3>
-          <ul className="text-yellow-300 text-sm space-y-1">
+        <div className="mt-8 p-4 bg-light-grey/10 border border-dark-grey rounded-lg">
+          <h3 className="text-light-blue-400 font-semibold mb-2">Important Notes:</h3>
+          <ul className="text-light-grey text-sm space-y-1">
             <li>• If you see "table does not exist" errors, you need to run the database migration</li>
             <li>• Go to Supabase Dashboard → SQL Editor</li>
             <li>• Copy and run the SQL from: supabase/migrations/001_initial_schema.sql</li>

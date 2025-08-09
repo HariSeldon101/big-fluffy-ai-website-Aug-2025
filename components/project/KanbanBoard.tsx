@@ -59,7 +59,7 @@ function SortableTask({ task }: { task: Task }) {
 
   const priorityColors = {
     low: 'border-l-green-500',
-    medium: 'border-l-yellow-500',
+    medium: 'border-l-light-blue-500',
     high: 'border-l-red-500',
   }
 
@@ -204,7 +204,7 @@ export default function KanbanBoard({ projectId }: KanbanBoardProps) {
     {
       id: 'progress',
       title: 'In Progress',
-      color: 'bg-yellow-500',
+      color: 'bg-light-blue-500',
       tasks: [
         {
           id: '4',
@@ -337,7 +337,7 @@ export default function KanbanBoard({ projectId }: KanbanBoardProps) {
 
         <DragOverlay>
           {activeTask ? (
-            <div className="bg-gray-800 border border-gray-700 border-l-4 border-l-yellow-500 rounded-lg p-4 cursor-pointer rotate-3 opacity-90">
+            <div className="bg-gray-800 border border-gray-700 border-l-4 border-l-light-blue-500 rounded-lg p-4 cursor-pointer rotate-3 opacity-90">
               <h4 className="font-medium text-white text-sm">{activeTask.title}</h4>
             </div>
           ) : null}

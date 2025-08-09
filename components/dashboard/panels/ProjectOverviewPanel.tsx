@@ -51,11 +51,11 @@ export default function ProjectOverviewPanel({
           </div>
           
           <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 bg-yellow-600 rounded-lg flex items-center justify-center">
+            <div className="w-10 h-10 bg-light-blue-500 rounded-lg flex items-center justify-center">
               <Clock size={20} className="text-white" />
             </div>
             <div>
-              <div className="text-lg font-semibold text-yellow-400">5</div>
+              <div className="text-lg font-semibold text-light-blue-400">5</div>
               <div className="text-gray-400 text-sm">In Progress</div>
             </div>
           </div>
@@ -96,7 +96,7 @@ export default function ProjectOverviewPanel({
               <span className="text-gray-400 text-sm">API Integration</span>
               <div className="flex items-center space-x-2">
                 <div className="w-20 bg-gray-700 rounded-full h-1">
-                  <div className="bg-yellow-500 h-1 rounded-full" style={{ width: '90%' }}></div>
+                  <div className="bg-light-blue-500 h-1 rounded-full" style={{ width: '90%' }}></div>
                 </div>
                 <span className="text-gray-400 text-xs">90%</span>
               </div>

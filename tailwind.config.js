@@ -23,7 +23,19 @@ module.exports = {
         accent: {
           500: '#8b5cf6',
           600: '#7c3aed',
-        }
+        },
+        'light-blue': {
+          400: '#60a5fa',
+          500: '#3b82f6',
+          600: '#2563eb',
+        },
+        'soft-pink': {
+          400: '#f8bbd9',
+          500: '#f48fb1',
+          600: '#ec407a',
+        },
+        'light-grey': '#d1d5db',
+        'dark-grey': '#6b7280'
       },
       animation: {
         'float': 'float 6s ease-in-out infinite',
