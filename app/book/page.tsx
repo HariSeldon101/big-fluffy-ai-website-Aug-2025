@@ -4,10 +4,11 @@ import { useEffect, useState } from 'react'
 import Navigation from '@/components/layout/Navigation'
 import Footer from '@/components/layout/Footer'
 
-const calendlyUrl = process.env.NEXT_PUBLIC_CALENDLY_URL || 'https://calendly.com/YOUR_HANDLE/intro-15min'
+const calendlyUrl = process.env.NEXT_PUBLIC_CALENDLY_URL || 'https://calendly.com/stusandboxacc/15min'
 
 export default function BookPage() {
   const [embedUrl, setEmbedUrl] = useState<string>('')
+  const [iframeError, setIframeError] = useState<boolean>(false)
 
   useEffect(() => {
     // Build Calendly URL with dark mode parameters
@@ -21,8 +22,11 @@ export default function BookPage() {
       url.searchParams.set('hide_gdpr_banner', '1')
       url.searchParams.set('hide_event_type_details', '1')
       url.searchParams.set('hide_branding', '1')
-      setEmbedUrl(url.toString())
-    } catch {
+      const finalUrl = url.toString()
+      console.log('Calendly embed URL:', finalUrl) // Debug log
+      setEmbedUrl(finalUrl)
+    } catch (error) {
+      console.error('Error building Calendly URL:', error)
       setEmbedUrl(calendlyUrl)
     }
   }, [])
@@ -126,17 +130,55 @@ export default function BookPage() {
           flex: 1,
           backgroundColor: '#0a0a0a'
         }}>
-          <iframe
-            src={embedUrl}
-            width="100%"
-            height="100%"
-            style={{ 
-              border: 'none',
-              backgroundColor: '#0a0a0a',
-              minHeight: 'calc(100vh - 240px)' // Account for header, footer, and increased top padding
-            }}
-            title="Calendly Booking"
-          />
+          {!embedUrl ? (
+            <div style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              minHeight: 'calc(100vh - 240px)',
+              color: '#ffffff'
+            }}>
+              Loading calendar...
+            </div>
+          ) : iframeError ? (
+            <div style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              minHeight: 'calc(100vh - 240px)',
+              color: '#ffffff',
+              flexDirection: 'column',
+              padding: '20px',
+              textAlign: 'center'
+            }}>
+              <p style={{ marginBottom: '16px' }}>Unable to load calendar widget.</p>
+              <a 
+                href={calendlyUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  color: '#7c3aed',
+                  textDecoration: 'underline'
+                }}
+              >
+                Open calendar in new window
+              </a>
+            </div>
+          ) : (
+            <iframe
+              src={embedUrl}
+              width="100%"
+              height="100%"
+              style={{ 
+                border: 'none',
+                backgroundColor: '#0a0a0a',
+                minHeight: 'calc(100vh - 240px)' // Account for header, footer, and increased top padding
+              }}
+              title="Calendly Booking"
+              onError={() => setIframeError(true)}
+              onLoad={() => console.log('Calendly iframe loaded successfully')}
+            />
+          )}
         </div>
       </div>
       
