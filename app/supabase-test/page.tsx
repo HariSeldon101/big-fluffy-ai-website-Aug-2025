@@ -176,7 +176,7 @@ export default function SupabaseTestPage() {
               <button
                 onClick={testTrigger}
                 disabled={loading}
-                className="w-full bg-soft-pink-500 text-white py-2 rounded-lg hover:bg-soft-pink-400 disabled:opacity-50"
+                className="w-full bg-gradient-to-br from-soft-pink-400 to-soft-pink-500 text-white py-2 rounded-lg hover:from-soft-pink-300 hover:to-soft-pink-400 disabled:opacity-50 shadow-lg"
               >
                 {loading ? 'Testing...' : 'Test Trigger Function'}
               </button>

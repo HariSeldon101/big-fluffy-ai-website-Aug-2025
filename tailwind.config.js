@@ -30,9 +30,9 @@ module.exports = {
           600: '#2563eb',
         },
         'soft-pink': {
-          400: '#f8bbd9',
-          500: '#f48fb1',
-          600: '#ec407a',
+          400: '#f472b6',
+          500: '#ec4899',
+          600: '#db2777',
         },
         'light-grey': '#d1d5db',
         'dark-grey': '#6b7280'

@@ -21,7 +21,7 @@ export default function RecentActivityPanel({
   const activities = [
     {
       icon: GitCommit,
-      color: 'bg-green-600',
+      color: 'bg-gradient-to-br from-green-500 to-green-600 shadow-lg',
       title: 'Task Completed',
       description: 'Sarah Wilson completed "Authentication System"',
       time: '2 hours ago',
@@ -29,7 +29,7 @@ export default function RecentActivityPanel({
     },
     {
       icon: FileText,
-      color: 'bg-blue-600',
+      color: 'bg-gradient-to-br from-blue-500 to-blue-600 shadow-lg',
       title: 'Document Uploaded',
       description: 'Mike Johnson uploaded "Database Schema v2.0"',
       time: '4 hours ago',
@@ -37,7 +37,7 @@ export default function RecentActivityPanel({
     },
     {
       icon: MessageCircle,
-      color: 'bg-dark-grey',
+      color: 'bg-gradient-to-br from-gray-500 to-gray-600 shadow-lg',
       title: 'Comment Added',
       description: 'John Doe commented on "API Integration" task',
       time: '6 hours ago',
@@ -45,7 +45,7 @@ export default function RecentActivityPanel({
     },
     {
       icon: Calendar,
-      color: 'bg-purple-600',
+      color: 'bg-gradient-to-br from-purple-500 to-purple-600 shadow-lg',
       title: 'Meeting Scheduled',
       description: 'Sprint Planning meeting scheduled for tomorrow',
       time: '8 hours ago',
@@ -53,7 +53,7 @@ export default function RecentActivityPanel({
     },
     {
       icon: User,
-      color: 'bg-red-600',
+      color: 'bg-gradient-to-br from-red-500 to-red-600 shadow-lg',
       title: 'Team Member Joined',
       description: 'Lisa Chen joined the AI Dashboard project',
       time: '1 day ago',
@@ -61,7 +61,7 @@ export default function RecentActivityPanel({
     },
     {
       icon: Activity,
-      color: 'bg-indigo-600',
+      color: 'bg-gradient-to-br from-indigo-500 to-indigo-600 shadow-lg',
       title: 'Project Updated',
       description: 'Project timeline updated with new milestones',
       time: '2 days ago',

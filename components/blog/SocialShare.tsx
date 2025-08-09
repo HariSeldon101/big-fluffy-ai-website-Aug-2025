@@ -125,7 +125,7 @@ export default function SocialShare({ url, title, description }: SocialShareProp
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
         onClick={copyToClipboard}
-        className="flex items-center gap-2 px-3 py-2 bg-primary-600 text-white rounded-lg hover:bg-primary-500 transition-all duration-200 group"
+        className="flex items-center gap-2 px-3 py-2 bg-gradient-to-br from-primary-500 to-primary-600 text-white rounded-lg hover:from-primary-400 hover:to-primary-500 transition-all duration-200 group shadow-lg"
         title="Copy URL"
       >
         <AnimatePresence mode="wait" initial={false}>

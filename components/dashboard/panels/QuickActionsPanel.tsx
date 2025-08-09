@@ -22,37 +22,37 @@ export default function QuickActionsPanel({
     {
       icon: Plus,
       label: 'New Project',
-      color: 'bg-primary-600 hover:bg-primary-500',
+      color: 'bg-gradient-to-br from-primary-500 to-primary-600 hover:from-primary-400 hover:to-primary-500 shadow-lg',
       action: () => console.log('New Project')
     },
     {
       icon: Upload,
       label: 'Upload Document',
-      color: 'bg-green-600 hover:bg-green-500',
+      color: 'bg-gradient-to-br from-green-500 to-green-600 hover:from-green-400 hover:to-green-500 shadow-lg',
       action: () => console.log('Upload Document')
     },
     {
       icon: FileText,
       label: 'Create Report',
-      color: 'bg-blue-600 hover:bg-blue-500',
+      color: 'bg-gradient-to-br from-blue-500 to-blue-600 hover:from-blue-400 hover:to-blue-500 shadow-lg',
       action: () => console.log('Create Report')
     },
     {
       icon: Calendar,
       label: 'Schedule Meeting',
-      color: 'bg-soft-pink-500 hover:bg-soft-pink-400',
+      color: 'bg-gradient-to-br from-soft-pink-400 to-soft-pink-500 hover:from-soft-pink-300 hover:to-soft-pink-400 shadow-lg',
       action: () => console.log('Schedule Meeting')
     },
     {
       icon: Users,
       label: 'Invite Team Member',
-      color: 'bg-purple-600 hover:bg-purple-500',
+      color: 'bg-gradient-to-br from-purple-500 to-purple-600 hover:from-purple-400 hover:to-purple-500 shadow-lg',
       action: () => console.log('Invite Team Member')
     },
     {
       icon: Settings,
       label: 'Project Settings',
-      color: 'bg-gray-600 hover:bg-gray-500',
+      color: 'bg-gradient-to-br from-gray-500 to-gray-600 hover:from-gray-400 hover:to-gray-500 shadow-lg',
       action: () => console.log('Project Settings')
     }
   ]

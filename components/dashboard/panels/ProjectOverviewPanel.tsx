@@ -31,7 +31,7 @@ export default function ProjectOverviewPanel({
       <div className="space-y-4">
         <div className="grid grid-cols-2 gap-4">
           <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 bg-primary-600 rounded-lg flex items-center justify-center">
+            <div className="w-10 h-10 bg-gradient-to-br from-primary-500 to-primary-600 rounded-lg flex items-center justify-center shadow-lg">
               <Target size={20} className="text-white" />
             </div>
             <div>
@@ -41,7 +41,7 @@ export default function ProjectOverviewPanel({
           </div>
           
           <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 bg-green-600 rounded-lg flex items-center justify-center">
+            <div className="w-10 h-10 bg-gradient-to-br from-green-500 to-green-600 rounded-lg flex items-center justify-center shadow-lg">
               <TrendingUp size={20} className="text-white" />
             </div>
             <div>
@@ -51,7 +51,7 @@ export default function ProjectOverviewPanel({
           </div>
           
           <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 bg-light-blue-500 rounded-lg flex items-center justify-center">
+            <div className="w-10 h-10 bg-gradient-to-br from-light-blue-400 to-light-blue-600 rounded-lg flex items-center justify-center shadow-lg">
               <Clock size={20} className="text-white" />
             </div>
             <div>
@@ -61,7 +61,7 @@ export default function ProjectOverviewPanel({
           </div>
           
           <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
+            <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex items-center justify-center shadow-lg">
               <Users size={20} className="text-white" />
             </div>
             <div>

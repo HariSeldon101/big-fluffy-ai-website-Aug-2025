@@ -109,7 +109,7 @@ function SortableTask({ task }: { task: Task }) {
           {task.labels.map((label) => (
             <span
               key={label}
-              className="px-2 py-1 text-xs bg-primary-600 text-white rounded"
+              className="px-2 py-1 text-xs bg-gradient-to-br from-primary-500 to-primary-600 text-white rounded shadow-sm"
             >
               {label}
             </span>
@@ -314,7 +314,7 @@ export default function KanbanBoard({ projectId }: KanbanBoardProps) {
     <div className="bg-gray-800 rounded-lg p-6">
       <div className="flex items-center justify-between mb-6">
         <h2 className="text-xl font-bold text-white">Kanban Board</h2>
-        <button className="bg-primary-600 text-white px-4 py-2 rounded-lg hover:bg-primary-500 transition-colors">
+        <button className="bg-gradient-to-br from-primary-500 to-primary-600 text-white px-4 py-2 rounded-lg hover:from-primary-400 hover:to-primary-500 transition-all shadow-lg">
           + Add Column
         </button>
       </div>

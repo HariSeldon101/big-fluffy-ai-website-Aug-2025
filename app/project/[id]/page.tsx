@@ -204,7 +204,7 @@ export default function ProjectDetailPage() {
                     <h3 className="text-lg font-semibold text-white mb-4">Recent Activity</h3>
                     <div className="space-y-3">
                       <div className="flex items-center space-x-3 p-3 bg-gray-700/50 rounded-lg">
-                        <div className="w-8 h-8 bg-primary-600 rounded-full flex items-center justify-center">
+                        <div className="w-8 h-8 bg-gradient-to-br from-primary-500 to-primary-600 rounded-full flex items-center justify-center shadow-lg">
                           <Users size={16} className="text-white" />
                         </div>
                         <div>
@@ -213,7 +213,7 @@ export default function ProjectDetailPage() {
                         </div>
                       </div>
                       <div className="flex items-center space-x-3 p-3 bg-gray-700/50 rounded-lg">
-                        <div className="w-8 h-8 bg-green-600 rounded-full flex items-center justify-center">
+                        <div className="w-8 h-8 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center shadow-lg">
                           <FileText size={16} className="text-white" />
                         </div>
                         <div>
@@ -222,7 +222,7 @@ export default function ProjectDetailPage() {
                         </div>
                       </div>
                       <div className="flex items-center space-x-3 p-3 bg-gray-700/50 rounded-lg">
-                        <div className="w-8 h-8 bg-light-blue-500 rounded-full flex items-center justify-center">
+                        <div className="w-8 h-8 bg-gradient-to-br from-light-blue-400 to-light-blue-600 rounded-full flex items-center justify-center shadow-lg">
                           <Settings size={16} className="text-white" />
                         </div>
                         <div>
@@ -240,7 +240,7 @@ export default function ProjectDetailPage() {
                     <h3 className="text-lg font-semibold text-white mb-4">Team Members</h3>
                     <div className="space-y-3">
                       <div className="flex items-center space-x-3">
-                        <div className="w-8 h-8 bg-primary-600 rounded-full flex items-center justify-center">
+                        <div className="w-8 h-8 bg-gradient-to-br from-primary-500 to-primary-600 rounded-full flex items-center justify-center shadow-lg">
                           <span className="text-white text-sm font-semibold">JD</span>
                         </div>
                         <div>
@@ -249,7 +249,7 @@ export default function ProjectDetailPage() {
                         </div>
                       </div>
                       <div className="flex items-center space-x-3">
-                        <div className="w-8 h-8 bg-green-600 rounded-full flex items-center justify-center">
+                        <div className="w-8 h-8 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center shadow-lg">
                           <span className="text-white text-sm font-semibold">SW</span>
                         </div>
                         <div>
@@ -258,7 +258,7 @@ export default function ProjectDetailPage() {
                         </div>
                       </div>
                       <div className="flex items-center space-x-3">
-                        <div className="w-8 h-8 bg-light-blue-500 rounded-full flex items-center justify-center">
+                        <div className="w-8 h-8 bg-gradient-to-br from-light-blue-400 to-light-blue-600 rounded-full flex items-center justify-center shadow-lg">
                           <span className="text-white text-sm font-semibold">MJ</span>
                         </div>
                         <div>
