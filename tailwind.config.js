@@ -6,6 +6,18 @@ module.exports = {
     './components/**/*.{js,ts,jsx,tsx,mdx}',
     './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
+  safelist: [
+    // Service icon gradients
+    'from-blue-500', 'to-cyan-500',
+    'from-purple-500', 'to-soft-pink-500', 'to-pink-500',
+    'from-purple-600', 'to-purple-700',
+    'from-light-blue-500', 'to-light-blue-600',
+    'from-indigo-500', 'to-purple-500',
+    'from-slate-500', 'to-slate-600',
+    'from-green-500', 'to-emerald-500',
+    // Gradient classes
+    'bg-gradient-to-br',
+  ],
   theme: {
     extend: {
       colors: {

@@ -28,7 +28,7 @@ const services = [
     icon: Shield,
     title: 'Project & Risk Management',
     description: 'Comprehensive project oversight with AI-powered risk assessment and mitigation strategies.',
-    color: 'from-purple-700 to-purple-800'
+    color: 'from-purple-600 to-purple-700'
   },
   {
     icon: Rocket,
@@ -46,7 +46,7 @@ const services = [
     icon: GraduationCap,
     title: 'AI Training',
     description: 'Comprehensive training programs to upskill your team in AI technologies and best practices.',
-    color: 'from-gray-500 to-gray-600'
+    color: 'from-slate-500 to-slate-600'
   }
 ]
 
