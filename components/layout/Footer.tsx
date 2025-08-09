@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { Mail, Phone, MapPin, Linkedin, Twitter, Github } from 'lucide-react'
+import TechStackIcons from '../footer/TechStackIcons'
 
 export default function Footer() {
   return (
@@ -60,6 +61,9 @@ export default function Footer() {
             </ul>
           </div>
         </div>
+
+        {/* Tech Stack Section */}
+        <TechStackIcons />
 
         {/* Bottom Section */}
         <div className="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">

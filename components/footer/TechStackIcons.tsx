@@ -1,0 +1,195 @@
+'use client'
+
+import { motion } from 'framer-motion'
+import Image from 'next/image'
+
+interface TechIcon {
+  name: string
+  icon: React.ReactNode
+  color: string
+}
+
+const techStack: TechIcon[] = [
+  {
+    name: 'PRINCE2',
+    icon: (
+      <div className="w-8 h-8 bg-gradient-to-br from-orange-500 to-red-600 rounded flex items-center justify-center">
+        <span className="text-white font-bold text-xs">P2</span>
+      </div>
+    ),
+    color: 'from-orange-500 to-red-600'
+  },
+  {
+    name: 'n8n',
+    icon: (
+      <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none">
+        <rect width="24" height="24" rx="4" fill="#EA4B71"/>
+        <path d="M7 8V16M11 12V16M17 8V16M7 12H11M11 8H17" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+      </svg>
+    ),
+    color: 'from-pink-500 to-rose-600'
+  },
+  {
+    name: 'Next.js',
+    icon: (
+      <svg className="w-8 h-8" viewBox="0 0 24 24" fill="white">
+        <path d="M11.572 0c-.176 0-.31.001-.358.007a19.76 19.76 0 0 1-.364.033C7.443.346 4.25 2.185 2.228 5.012a11.875 11.875 0 0 0-2.119 5.243c-.096.659-.108.854-.108 1.747s.012 1.089.108 1.748c.652 4.506 3.86 8.292 8.209 9.695.779.25 1.6.422 2.534.525.363.04 1.935.04 2.299 0 1.611-.178 2.977-.577 4.323-1.264.207-.106.247-.134.219-.158-.02-.013-.9-1.193-1.955-2.62l-1.919-2.592-2.404-3.558a338.739 338.739 0 0 0-2.422-3.556c-.009-.002-.018 1.579-.023 3.51-.007 3.38-.01 3.515-.052 3.595a.426.426 0 0 1-.206.214c-.075.037-.14.044-.495.044H7.81l-.108-.068a.438.438 0 0 1-.157-.171l-.05-.106.006-4.703.007-4.705.072-.092a.645.645 0 0 1 .174-.143c.096-.047.134-.051.54-.051.478 0 .558.018.682.154.035.038 1.337 1.999 2.895 4.361a10760.433 10760.433 0 0 0 4.735 7.17l1.9 2.879.096-.063a12.317 12.317 0 0 0 2.466-2.025 11.775 11.775 0 0 0 2.824-6.134c.096-.66.108-.854.108-1.748 0-.893-.012-1.088-.108-1.747C19.746 4.347 16.538.561 12.189-.847a12.44 12.44 0 0 0-2.617-.006zm4.811 7.343a.862.862 0 0 1 .206.13c.055.049.106.129.106.165 0 .006.272.416.608.91l.608.909 6.049 9.108.607.914-.306.2a9.776 9.776 0 0 1-1.81 1.055l-.307.134-1.22-1.834a2651.64 2651.64 0 0 1-2.495-3.758l-7.781-11.7-.61-.917-.306-.461-.305-.458z"/>
+      </svg>
+    ),
+    color: 'from-gray-800 to-black'
+  },
+  {
+    name: 'React',
+    icon: (
+      <svg className="w-8 h-8" viewBox="0 0 24 24" fill="#61DAFB">
+        <path d="M14.23 12.004a2.236 2.236 0 0 1-2.235 2.236 2.236 2.236 0 0 1-2.236-2.236 2.236 2.236 0 0 1 2.235-2.236 2.236 2.236 0 0 1 2.236 2.236zm2.648-10.69c-1.346 0-3.107.96-4.888 2.622-1.78-1.653-3.542-2.602-4.887-2.602-.41 0-.783.093-1.106.278-1.375.793-1.683 3.264-.973 6.365C1.98 8.917 0 10.42 0 12.004c0 1.59 1.99 3.097 5.043 4.03-.704 3.113-.39 5.588.988 6.38.32.187.69.275 1.102.275 1.345 0 3.107-.96 4.888-2.624 1.78 1.654 3.542 2.603 4.887 2.603.41 0 .783-.09 1.106-.275 1.374-.792 1.683-3.263.973-6.365C22.02 15.096 24 13.59 24 12.004c0-1.59-1.99-3.097-5.043-4.032.704-3.11.39-5.587-.988-6.38-.318-.184-.688-.277-1.092-.278zm-.005 1.09v.006c.225 0 .406.044.558.127.666.382.955 1.835.73 3.704-.054.46-.142.945-.25 1.44a23.476 23.476 0 0 0-3.107-.534A23.892 23.892 0 0 0 12.769 4.7c1.592-1.48 3.087-2.292 4.105-2.295zm-9.77.02c1.012 0 2.514.808 4.11 2.28-.686.72-1.37 1.537-2.02 2.442a22.73 22.73 0 0 0-3.113.538 15.02 15.02 0 0 1-.254-1.42c-.23-1.868.054-3.32.714-3.707.19-.09.4-.127.563-.132zm4.882 3.05c.455.468.91.992 1.36 1.564-.44-.02-.89-.034-1.345-.034-.46 0-.915.01-1.36.034.44-.572.895-1.096 1.345-1.565zM12 8.1c.74 0 1.477.034 2.202.093.406.582.802 1.203 1.183 1.86.372.64.71 1.29 1.018 1.946-.308.655-.646 1.31-1.013 1.95-.38.66-.773 1.288-1.18 1.87a25.64 25.64 0 0 1-4.412.005 26.64 26.64 0 0 1-1.184-1.86c-.372-.64-.71-1.29-1.018-1.946a25.17 25.17 0 0 1 1.013-1.954c.38-.66.773-1.286 1.18-1.868A25.245 25.245 0 0 1 12 8.098zm-3.635.254c-.24.377-.48.763-.704 1.16-.225.39-.435.788-.635 1.174-.265-.656-.49-1.31-.676-1.947.64-.15 1.315-.283 2.015-.386zm7.26 0c.695.103 1.365.23 2.006.387-.18.632-.405 1.282-.66 1.933a25.952 25.952 0 0 0-1.345-2.32zm3.063.675c.484.15.944.317 1.375.498 1.732.74 2.852 1.708 2.852 2.476-.005.768-1.125 1.74-2.857 2.475-.42.18-.88.342-1.355.493a23.966 23.966 0 0 0-1.1-2.98c.45-1.017.81-2.01 1.085-2.964zm-13.395.004c.278.96.645 1.957 1.1 2.98a23.142 23.142 0 0 0-1.086 2.964c-.484-.15-.944-.318-1.37-.5-1.732-.737-2.852-1.706-2.852-2.474 0-.768 1.12-1.742 2.852-2.476.42-.18.88-.342 1.356-.494zm11.678 4.28c.265.657.49 1.312.676 1.948-.64.157-1.316.29-2.016.39a25.819 25.819 0 0 0 1.341-2.338zm-9.945.02c.2.392.41.783.64 1.175.23.39.465.772.705 1.143a22.005 22.005 0 0 1-2.006-.386c.18-.63.406-1.282.66-1.933zM17.92 16.32c.112.493.2.968.254 1.423.23 1.868-.054 3.32-.714 3.708-.147.09-.338.128-.563.128-1.012 0-2.514-.807-4.11-2.28.686-.72 1.37-1.536 2.02-2.44 1.107-.118 2.154-.3 3.113-.54zm-11.83.01c.96.234 2.006.415 3.107.532.66.905 1.345 1.727 2.035 2.446-1.595 1.483-3.092 2.295-4.11 2.295a1.185 1.185 0 0 1-.553-.132c-.666-.38-.955-1.834-.73-3.703.054-.46.142-.944.25-1.438zm4.56.64c.44.02.89.034 1.345.034.46 0 .915-.01 1.36-.034-.44.572-.895 1.095-1.345 1.565-.455-.47-.91-.993-1.36-1.565z"/>
+      </svg>
+    ),
+    color: 'from-blue-400 to-cyan-400'
+  },
+  {
+    name: 'Cursor',
+    icon: (
+      <div className="w-8 h-8 bg-gradient-to-br from-blue-600 to-purple-700 rounded flex items-center justify-center">
+        <svg className="w-5 h-5" viewBox="0 0 24 24" fill="white">
+          <path d="M3 3L21 12L12 14L10 21L3 3Z" stroke="white" strokeWidth="2" fill="none"/>
+        </svg>
+      </div>
+    ),
+    color: 'from-blue-600 to-purple-700'
+  },
+  {
+    name: 'Tailwind CSS',
+    icon: (
+      <svg className="w-8 h-8" viewBox="0 0 24 24" fill="#06B6D4">
+        <path d="M12.001 4.8c-3.2 0-5.2 1.6-6 4.8 1.2-1.6 2.6-2.2 4.2-1.8.913.228 1.565.89 2.288 1.624C13.666 10.618 15.027 12 18.001 12c3.2 0 5.2-1.6 6-4.8-1.2 1.6-2.6 2.2-4.2 1.8-.913-.228-1.565-.89-2.288-1.624C16.337 6.182 14.976 4.8 12.001 4.8zM6.001 12c-3.2 0-5.2 1.6-6 4.8 1.2-1.6 2.6-2.2 4.2-1.8.913.228 1.565.89 2.288 1.624 1.177 1.194 2.538 2.576 5.512 2.576 3.2 0 5.2-1.6 6-4.8-1.2 1.6-2.6 2.2-4.2 1.8-.913-.228-1.565-.89-2.288-1.624C10.337 13.382 8.976 12 6.001 12z"/>
+      </svg>
+    ),
+    color: 'from-teal-400 to-blue-500'
+  },
+  {
+    name: 'Motion.dev',
+    icon: (
+      <div className="w-8 h-8 bg-gradient-to-br from-purple-500 to-pink-600 rounded flex items-center justify-center">
+        <svg className="w-5 h-5" viewBox="0 0 24 24" fill="white">
+          <path d="M4 12a8 8 0 0 1 8-8V2.5A9.5 9.5 0 0 0 2.5 12H4Zm8-8a8 8 0 0 1 8 8h1.5A9.5 9.5 0 0 0 12 2.5V4Z"/>
+          <path d="M12 20a8 8 0 0 1-8-8H2.5A9.5 9.5 0 0 0 12 21.5V20Zm8-8a8 8 0 0 1-8 8v1.5A9.5 9.5 0 0 0 21.5 12H20Z"/>
+        </svg>
+      </div>
+    ),
+    color: 'from-purple-500 to-pink-600'
+  },
+  {
+    name: 'TypeScript',
+    icon: (
+      <div className="w-8 h-8 bg-gradient-to-br from-blue-600 to-blue-700 rounded flex items-center justify-center">
+        <span className="text-white font-bold text-sm">TS</span>
+      </div>
+    ),
+    color: 'from-blue-600 to-blue-700'
+  },
+  {
+    name: 'Supabase',
+    icon: (
+      <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none">
+        <path d="M21.362 9.354H12V.396a.396.396 0 0 0-.716-.233L2.203 12.424l-.401.562a1.04 1.04 0 0 0 .836 1.659H12V23.604a.396.396 0 0 0 .716.233L21.797 11.576l.401-.562a1.04 1.04 0 0 0-.836-1.659Z" fill="#3ECF8E"/>
+      </svg>
+    ),
+    color: 'from-green-400 to-emerald-500'
+  },
+  {
+    name: 'Vercel',
+    icon: (
+      <svg className="w-8 h-8" viewBox="0 0 24 24" fill="white">
+        <path d="M24 22.525H0L12 1.475l12 21.05Z"/>
+      </svg>
+    ),
+    color: 'from-gray-800 to-black'
+  },
+  {
+    name: 'Node.js',
+    icon: (
+      <svg className="w-8 h-8" viewBox="0 0 24 24" fill="#339933">
+        <path d="M11.998 24c-.321 0-.641-.084-.922-.247l-2.936-1.737c-.438-.245-.224-.332-.08-.383.585-.203.703-.25 1.328-.605.065-.037.151-.023.218.017l2.256 1.339c.082.045.197.045.272 0l8.795-5.076c.082-.047.134-.141.134-.238V6.921c0-.099-.053-.192-.137-.242L11.13 1.584c-.08-.047-.188-.047-.268 0L2.068 6.68c-.084.05-.137.143-.137.242V17.07c0 .099.053.19.137.238l2.409 1.392c1.307.654 2.108-.116 2.108--.89V7.787c0-.142.114-.253.255-.253h1.114c.139 0 .255.112.255.253v10.021c0 1.745-.95 2.745-2.604 2.745-.508 0-.909 0-2.026-.551L2.28 18.675c-.57-.329-.922-.94-.922-1.604V6.921c0-.665.35-1.277.922-1.603L11.076.242C11.635-.08 12.365-.08 12.922.242l8.795 5.076c.57.326.922.938.922 1.603v10.15c0 .664-.35 1.276-.922 1.604l-8.795 5.076c-.28.163-.601.247-.922.247zm2.707-7.173c-3.85 0-4.648-1.766-4.648-3.248 0-.14.114-.252.255-.252h1.135c.127 0 .233.093.252.218.171 1.156.684 1.741 3.007 1.741 1.85 0 2.641-.418 2.641-1.402 0-.567-.224-.987-3.097-1.269-2.405-.236-3.892-.769-3.892-2.692 0-1.772 1.492-2.827 3.997-2.827 2.815 0 4.203.977 4.38 3.08a.264.264 0 0 1-.071.187.252.252 0 0 1-.181.08H16.51a.252.252 0 0 1-.239-.183c-.265-1.177-.91-1.553-2.729-1.553-2.009 0-2.241.7-2.241 1.224 0 .639.276.825 3.006 1.185 2.704.359 3.985.864 3.985 2.763 0 1.918-1.598 3.01-4.386 3.01z"/>
+      </svg>
+    ),
+    color: 'from-green-600 to-green-700'
+  }
+]
+
+export default function TechStackIcons() {
+  return (
+    <div className="py-8 border-t border-gray-800">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-6">
+          <h4 className="text-lg font-semibold text-foreground mb-2">Powered by Industry-Leading Technologies</h4>
+          <p className="text-gray-400 text-sm">The robust tech stack behind our AI solutions</p>
+        </div>
+        
+        {/* Scrolling Container */}
+        <div className="relative overflow-hidden">
+          {/* Gradient Overlays */}
+          <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-gray-900/50 to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-gray-900/50 to-transparent z-10 pointer-events-none" />
+          
+          {/* Scrolling Animation */}
+          <motion.div
+            className="flex space-x-6"
+            animate={{
+              x: [0, -100 * techStack.length / 2]
+            }}
+            transition={{
+              x: {
+                repeat: Infinity,
+                repeatType: "loop",
+                duration: 30,
+                ease: "linear"
+              }
+            }}
+            style={{
+              width: `${techStack.length * 100}px`
+            }}
+          >
+            {/* First set of icons */}
+            {techStack.map((tech, index) => (
+              <motion.div
+                key={`first-${index}`}
+                className="flex-shrink-0 group"
+                whileHover={{ scale: 1.1 }}
+                transition={{ duration: 0.2 }}
+              >
+                <div className="flex flex-col items-center space-y-2 p-3">
+                  <div className={`w-12 h-12 bg-gradient-to-br ${tech.color} rounded-lg flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300`}>
+                    {tech.icon}
+                  </div>
+                  <span className="text-xs text-gray-400 group-hover:text-gray-300 transition-colors font-medium text-center whitespace-nowrap">
+                    {tech.name}
+                  </span>
+                </div>
+              </motion.div>
+            ))}
+            
+            {/* Duplicate set for seamless loop */}
+            {techStack.map((tech, index) => (
+              <motion.div
+                key={`second-${index}`}
+                className="flex-shrink-0 group"
+                whileHover={{ scale: 1.1 }}
+                transition={{ duration: 0.2 }}
+              >
+                <div className="flex flex-col items-center space-y-2 p-3">
+                  <div className={`w-12 h-12 bg-gradient-to-br ${tech.color} rounded-lg flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300`}>
+                    {tech.icon}
+                  </div>
+                  <span className="text-xs text-gray-400 group-hover:text-gray-300 transition-colors font-medium text-center whitespace-nowrap">
+                    {tech.name}
+                  </span>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </div>
+    </div>
+  )
+}
