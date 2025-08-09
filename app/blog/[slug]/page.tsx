@@ -172,7 +172,7 @@ export default function BlogPostPage() {
               </div>
 
               {/* Title */}
-              <h1 className="text-3xl md:text-5xl font-bold text-foreground leading-tight mb-6">
+              <h1 className="text-3xl md:text-5xl font-bold gradient-text leading-tight mb-6">
                 {post.title}
               </h1>
 

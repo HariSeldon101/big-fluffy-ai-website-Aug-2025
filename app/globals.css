@@ -32,9 +32,19 @@ body {
   overflow: hidden;
 }
 
+/* Gradient text utility class */
+.gradient-text {
+  @apply bg-gradient-to-r from-foreground to-primary-500 bg-clip-text text-transparent;
+}
+
+/* Apply gradient to H1s that don't have explicit text color classes */
+h1:not([class*="text-"]) {
+  @apply bg-gradient-to-r from-foreground to-primary-500 bg-clip-text text-transparent;
+}
+
 /* Blog-specific styles */
 .blog-content h1 {
-  @apply text-3xl font-bold text-foreground mb-6 mt-8 first:mt-0;
+  @apply text-3xl font-bold mb-6 mt-8 first:mt-0;
 }
 
 .blog-content h2 {
