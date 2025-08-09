@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react'
 import { createClient } from '@/lib/supabase'
 import BlogList from '@/components/blog/BlogList'
-import { Calendar, Filter, Search } from 'lucide-react'
+import { Calendar, Filter, Search, ChevronDown, ChevronUp } from 'lucide-react'
 import Navigation from '@/components/layout/Navigation'
 import Footer from '@/components/layout/Footer'
 import { getOverridesMap } from '@/lib/blog/overrides'
@@ -33,6 +33,7 @@ export default function BlogPage() {
   const [selectedTag, setSelectedTag] = useState('')
   const [sortBy, setSortBy] = useState<'newest' | 'oldest' | 'popular'>('newest')
   const [allTags, setAllTags] = useState<string[]>([])
+  const [showFilters, setShowFilters] = useState(false)
 
   const sortOptions: SortOption[] = [
     { label: 'Newest First', value: 'newest' },
@@ -165,54 +166,75 @@ export default function BlogPage() {
               />
             </div>
 
-            {/* Filters and Sort */}
-            <div className="flex flex-col md:flex-row gap-4 items-center justify-between">
-              {/* Tag Filters */}
-              <div className="flex flex-wrap gap-2 items-center">
-                <Filter className="h-5 w-5 text-muted-foreground" />
-                <span className="text-sm text-muted-foreground mr-2">Filter by:</span>
-                {allTags.map(tag => (
-                  <button
-                    key={tag}
-                    onClick={() => handleTagFilter(tag)}
-                    className={`px-3 py-1 rounded-full text-sm transition-colors ${
-                      selectedTag === tag
-                        ? 'bg-primary-500 text-white'
-                        : 'bg-card text-muted-foreground hover:bg-primary-500/20 hover:text-primary-400 border border-gray-700'
-                    }`}
-                  >
-                    {tag}
-                  </button>
-                ))}
-              </div>
-
-              {/* Sort and Clear */}
-              <div className="flex gap-3 items-center">
-                <div className="flex items-center gap-2">
-                  <Calendar className="h-5 w-5 text-muted-foreground" />
-                  <select
-                    value={sortBy}
-                    onChange={handleSortChange}
-                    className="bg-card border border-gray-700 rounded-lg px-3 py-2 text-foreground focus:outline-none focus:ring-2 focus:ring-primary-500"
-                  >
-                    {sortOptions.map(option => (
-                      <option key={option.value} value={option.value}>
-                        {option.label}
-                      </option>
-                    ))}
-                  </select>
-                </div>
-                
+            {/* Filter Toggle Button */}
+            <div className="text-center">
+              <button
+                onClick={() => setShowFilters(!showFilters)}
+                className="inline-flex items-center gap-2 px-4 py-2 bg-card border border-gray-700 rounded-lg text-muted-foreground hover:text-foreground hover:border-primary-500/50 transition-colors"
+              >
+                <Filter className="h-4 w-4" />
+                <span>Filters & Sort</span>
+                {showFilters ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}
                 {(searchTerm || selectedTag || sortBy !== 'newest') && (
-                  <button
-                    onClick={clearFilters}
-                    className="px-4 py-2 text-sm text-primary-400 hover:text-primary-300 transition-colors"
-                  >
-                    Clear Filters
-                  </button>
+                  <span className="ml-1 px-2 py-1 bg-primary-500 text-white text-xs rounded-full">
+                    Active
+                  </span>
                 )}
-              </div>
+              </button>
             </div>
+
+            {/* Collapsible Filters and Sort */}
+            {showFilters && (
+              <div className="animate-in slide-in-from-top-2 duration-200 ease-out">
+                <div className="flex flex-col md:flex-row gap-4 items-center justify-between bg-card/50 border border-gray-700/50 rounded-lg p-6">
+                  {/* Tag Filters */}
+                  <div className="flex flex-wrap gap-2 items-center">
+                    <Filter className="h-5 w-5 text-muted-foreground" />
+                    <span className="text-sm text-muted-foreground mr-2">Filter by:</span>
+                    {allTags.map(tag => (
+                      <button
+                        key={tag}
+                        onClick={() => handleTagFilter(tag)}
+                        className={`px-3 py-1 rounded-full text-sm transition-colors ${
+                          selectedTag === tag
+                            ? 'bg-primary-500 text-white'
+                            : 'bg-card text-muted-foreground hover:bg-primary-500/20 hover:text-primary-400 border border-gray-700'
+                        }`}
+                      >
+                        {tag}
+                      </button>
+                    ))}
+                  </div>
+
+                  {/* Sort and Clear */}
+                  <div className="flex gap-3 items-center">
+                    <div className="flex items-center gap-2">
+                      <Calendar className="h-5 w-5 text-muted-foreground" />
+                      <select
+                        value={sortBy}
+                        onChange={handleSortChange}
+                        className="bg-card border border-gray-700 rounded-lg px-3 py-2 text-foreground focus:outline-none focus:ring-2 focus:ring-primary-500"
+                      >
+                        {sortOptions.map(option => (
+                          <option key={option.value} value={option.value}>
+                            {option.label}
+                          </option>
+                        ))}
+                      </select>
+                    </div>
+                    
+                    {(searchTerm || selectedTag || sortBy !== 'newest') && (
+                      <button
+                        onClick={clearFilters}
+                        className="px-4 py-2 text-sm text-primary-400 hover:text-primary-300 transition-colors"
+                      >
+                        Clear Filters
+                      </button>
+                    )}
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
 
           {/* Results Count */}
