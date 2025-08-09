@@ -4,6 +4,8 @@ import { useState } from 'react'
 import { createClient } from '@/lib/supabase'
 import { motion } from 'framer-motion'
 import { Mail, Lock, User, Eye, EyeOff, Loader2 } from 'lucide-react'
+import { useRouter } from 'next/navigation'
+import SuccessModal from './SuccessModal'
 
 interface AuthFormProps {
   mode: 'login' | 'signup'
@@ -19,8 +21,21 @@ export default function AuthForm({ mode, onToggleMode }: AuthFormProps) {
   const [loading, setLoading] = useState(false)
   const [message, setMessage] = useState('')
   const [error, setError] = useState('')
+  const [showSuccessModal, setShowSuccessModal] = useState(false)
+  const [signupEmail, setSignupEmail] = useState('')
+  
+  const router = useRouter()
 
   const supabase = createClient()
+
+  const handleRedirectToDashboard = () => {
+    setShowSuccessModal(false)
+    router.push('/dashboard')
+  }
+
+  const handleCloseSuccessModal = () => {
+    setShowSuccessModal(false)
+  }
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -30,7 +45,7 @@ export default function AuthForm({ mode, onToggleMode }: AuthFormProps) {
 
     try {
       if (mode === 'signup') {
-        const { error } = await supabase.auth.signUp({
+        const { data, error } = await supabase.auth.signUp({
           email,
           password,
           options: {
@@ -41,13 +56,25 @@ export default function AuthForm({ mode, onToggleMode }: AuthFormProps) {
           }
         })
         if (error) throw error
-        setMessage('Check your email to confirm your account!')
+        
+        // Store email for success modal and show it
+        setSignupEmail(email)
+        setShowSuccessModal(true)
+        
+        // Clear form
+        setEmail('')
+        setPassword('')
+        setFullName('')
+        setCompanyName('')
       } else {
         const { error } = await supabase.auth.signInWithPassword({
           email,
           password,
         })
         if (error) throw error
+        
+        // Redirect to dashboard on successful login
+        router.push('/dashboard')
       }
     } catch (error: any) {
       setError(error.message)
@@ -78,7 +105,15 @@ export default function AuthForm({ mode, onToggleMode }: AuthFormProps) {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background px-4">
+    <>
+      <SuccessModal
+        isOpen={showSuccessModal}
+        onClose={handleCloseSuccessModal}
+        onRedirectToDashboard={handleRedirectToDashboard}
+        userEmail={signupEmail}
+      />
+      
+      <div className="min-h-screen flex items-center justify-center bg-background px-4">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -239,5 +274,6 @@ export default function AuthForm({ mode, onToggleMode }: AuthFormProps) {
         </div>
       </motion.div>
     </div>
+    </>
   )
 }
