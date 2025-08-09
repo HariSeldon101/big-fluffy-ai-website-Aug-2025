@@ -22,13 +22,13 @@ const services = [
     icon: Cog,
     title: 'AI Automation',
     description: 'Streamline operations with intelligent automation solutions that scale with your business.',
-    color: 'from-purple-500 to-pink-500'
+    color: 'from-purple-500 to-soft-pink-500'
   },
   {
     icon: Shield,
     title: 'Project & Risk Management',
     description: 'Comprehensive project oversight with AI-powered risk assessment and mitigation strategies.',
-    color: 'from-green-500 to-emerald-500'
+    color: 'from-purple-700 to-purple-800'
   },
   {
     icon: Rocket,
@@ -46,7 +46,7 @@ const services = [
     icon: GraduationCap,
     title: 'AI Training',
     description: 'Comprehensive training programs to upskill your team in AI technologies and best practices.',
-    color: 'from-soft-pink-400 to-soft-pink-500'
+    color: 'from-gray-500 to-gray-600'
   }
 ]
 
@@ -125,7 +125,7 @@ export default function ServicesGrid() {
         viewport={{ once: true }}
         className="text-center mt-16"
       >
-        <button className="bg-primary-600 hover:bg-primary-500 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 group">
+        <button className="bg-gradient-to-br from-primary-500 to-primary-600 hover:from-primary-400 hover:to-primary-500 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 group shadow-lg">
           Discuss Your Project
           <ArrowRight className="inline ml-2 group-hover:translate-x-1 transition-transform" size={20} />
         </button>
