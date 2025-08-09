@@ -34,7 +34,18 @@ body {
 
 /* Gradient text utility class */
 .gradient-text {
-  @apply bg-gradient-to-r from-foreground to-primary-500 bg-clip-text text-transparent;
+  background: linear-gradient(to right, #ffffff, #8b5cf6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  line-height: 1.5;
+  padding-bottom: 0.75rem;
+  padding-top: 0.5rem;
+  margin-bottom: 1rem;
+  overflow: visible;
+  display: block;
+  position: relative;
 }
 
 /* Blog-specific styles */
