@@ -16,37 +16,37 @@ const services = [
     icon: Brain,
     title: 'AI Consultancy',
     description: 'Strategic AI planning and implementation roadmaps tailored to your business needs.',
-    color: 'from-blue-500 to-cyan-500'
+    gradientClass: 'bg-gradient-to-br from-blue-400 to-cyan-400'
   },
   {
     icon: Cog,
     title: 'AI Automation',
     description: 'Streamline operations with intelligent automation solutions that scale with your business.',
-    color: 'from-purple-500 to-soft-pink-500'
+    gradientClass: 'bg-gradient-to-br from-purple-400 to-pink-400'
   },
   {
     icon: Shield,
     title: 'Project & Risk Management',
     description: 'Comprehensive project oversight with AI-powered risk assessment and mitigation strategies.',
-    color: 'from-purple-600 to-purple-700'
+    gradientClass: 'bg-gradient-to-br from-purple-500 to-indigo-600'
   },
   {
     icon: Rocket,
     title: 'Project Implementation',
     description: 'End-to-end AI solution deployment with seamless integration into existing systems.',
-    color: 'from-light-blue-500 to-light-blue-600'
+    gradientClass: 'bg-gradient-to-br from-sky-400 to-blue-500'
   },
   {
     icon: Users,
     title: 'Outsource AI Expertise',
     description: 'Access our team of AI specialists for flexible, scalable expertise on demand.',
-    color: 'from-indigo-500 to-purple-500'
+    gradientClass: 'bg-gradient-to-br from-indigo-400 to-purple-400'
   },
   {
     icon: GraduationCap,
     title: 'AI Training',
     description: 'Comprehensive training programs to upskill your team in AI technologies and best practices.',
-    color: 'from-slate-500 to-slate-600'
+    gradientClass: 'bg-gradient-to-br from-gray-400 to-gray-600'
   }
 ]
 
@@ -84,10 +84,10 @@ export default function ServicesGrid() {
             >
               <div className="relative p-8 bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-2xl hover:border-primary-500/50 transition-all duration-300 h-full">
                 {/* Gradient Background */}
-                <div className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-5 rounded-2xl transition-opacity duration-300`} />
+                <div className={`absolute inset-0 ${service.gradientClass} opacity-0 group-hover:opacity-5 rounded-2xl transition-opacity duration-300`} />
                 
                 {/* Icon */}
-                <div className={`w-16 h-16 bg-gradient-to-br ${service.color} rounded-xl flex items-center justify-center mb-6 shadow-lg`}>
+                <div className={`w-16 h-16 ${service.gradientClass} rounded-xl flex items-center justify-center mb-6 shadow-lg`}>
                   <Icon size={28} className="text-white" />
                 </div>
 

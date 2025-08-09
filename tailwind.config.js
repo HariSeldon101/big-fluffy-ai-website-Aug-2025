@@ -7,16 +7,24 @@ module.exports = {
     './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   safelist: [
-    // Service icon gradients
-    'from-blue-500', 'to-cyan-500',
-    'from-purple-500', 'to-soft-pink-500', 'to-pink-500',
-    'from-purple-600', 'to-purple-700',
-    'from-light-blue-500', 'to-light-blue-600',
-    'from-indigo-500', 'to-purple-500',
-    'from-slate-500', 'to-slate-600',
-    'from-green-500', 'to-emerald-500',
-    // Gradient classes
+    // Complete gradient classes for service icons
     'bg-gradient-to-br',
+    'from-blue-400', 'to-cyan-400',
+    'from-purple-400', 'to-pink-400', 
+    'from-purple-500', 'to-indigo-600',
+    'from-sky-400', 'to-blue-500',
+    'from-indigo-400', 'to-purple-400',
+    'from-gray-400', 'to-gray-600',
+    // Complete service gradient classes
+    'bg-gradient-to-br from-blue-400 to-cyan-400',
+    'bg-gradient-to-br from-purple-400 to-pink-400',
+    'bg-gradient-to-br from-purple-500 to-indigo-600', 
+    'bg-gradient-to-br from-sky-400 to-blue-500',
+    'bg-gradient-to-br from-indigo-400 to-purple-400',
+    'bg-gradient-to-br from-gray-400 to-gray-600',
+    // Dashboard gradients
+    'from-green-500', 'to-emerald-500',
+    'from-primary-500', 'to-primary-600',
   ],
   theme: {
     extend: {
