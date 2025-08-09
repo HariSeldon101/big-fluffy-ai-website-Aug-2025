@@ -6,6 +6,7 @@ import type { LucideIcon } from 'lucide-react'
 import Navigation from '@/components/layout/Navigation'
 import Footer from '@/components/layout/Footer'
 import Link from 'next/link'
+import Image from 'next/image'
 
 interface ProcessStep {
   icon: LucideIcon
@@ -21,6 +22,7 @@ interface ServiceTemplateProps {
   process: ProcessStep[]
   ctaTitle: string
   ctaDescription: string
+  showPrince2?: boolean
 }
 
 export default function ServiceTemplate({
@@ -30,7 +32,8 @@ export default function ServiceTemplate({
   benefits,
   process,
   ctaTitle,
-  ctaDescription
+  ctaDescription,
+  showPrince2
 }: ServiceTemplateProps) {
   return (
     <main className="min-h-screen bg-background">
@@ -104,6 +107,30 @@ export default function ServiceTemplate({
           </div>
         </div>
       </section>
+
+      {showPrince2 && (
+        <section className="py-16">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="text-center"
+            >
+              <Image 
+                src="/images/prince2-seeklogo.svg" 
+                alt="PRINCE2 Logo" 
+                width={168} 
+                height={84}
+                className="w-42 h-21 object-contain mx-auto mb-4"
+              />
+              <p className="text-muted-foreground max-w-2xl mx-auto">
+                We use PRINCE2 qualified project managers to ensure the highest standards of project delivery.
+              </p>
+            </motion.div>
+          </div>
+        </section>
+      )}
 
       {/* Our Process */}
       <section className="py-16">

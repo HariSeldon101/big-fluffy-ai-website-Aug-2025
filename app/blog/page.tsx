@@ -1,12 +1,13 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, Suspense } from 'react'
 import { createClient } from '@/lib/supabase'
 import BlogList from '@/components/blog/BlogList'
-import { Calendar, Filter, Search, ChevronDown, ChevronUp } from 'lucide-react'
+import { Calendar, Filter, Search, ChevronDown, ChevronUp, CheckCircle, X } from 'lucide-react'
 import Navigation from '@/components/layout/Navigation'
 import Footer from '@/components/layout/Footer'
 import { getOverridesMap } from '@/lib/blog/overrides'
+import { useSearchParams } from 'next/navigation'
 
 interface BlogPost {
   id: string
@@ -25,7 +26,8 @@ interface SortOption {
   value: 'newest' | 'oldest' | 'popular'
 }
 
-export default function BlogPage() {
+function BlogContent() {
+  const searchParams = useSearchParams()
   const [posts, setPosts] = useState<BlogPost[]>([])
   const [filteredPosts, setFilteredPosts] = useState<BlogPost[]>([])
   const [loading, setLoading] = useState(true)
@@ -34,6 +36,7 @@ export default function BlogPage() {
   const [sortBy, setSortBy] = useState<'newest' | 'oldest' | 'popular'>('newest')
   const [allTags, setAllTags] = useState<string[]>([])
   const [showFilters, setShowFilters] = useState(false)
+  const [showSuccessMessage, setShowSuccessMessage] = useState(false)
 
   const sortOptions: SortOption[] = [
     { label: 'Newest First', value: 'newest' },
@@ -43,7 +46,17 @@ export default function BlogPage() {
 
   useEffect(() => {
     fetchPosts()
-  }, [])
+    
+    // Check for success message from contact form
+    const message = searchParams.get('message')
+    if (message === 'contact-success') {
+      setShowSuccessMessage(true)
+      // Auto-hide after 10 seconds
+      setTimeout(() => {
+        setShowSuccessMessage(false)
+      }, 10000)
+    }
+  }, [searchParams])
 
   useEffect(() => {
     filterAndSortPosts()
@@ -142,6 +155,25 @@ export default function BlogPage() {
       
       <main className="pt-24 pb-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          
+          {/* Success Message */}
+          {showSuccessMessage && (
+            <div className="mb-8 p-4 bg-green-900/20 border border-green-500/30 rounded-lg flex items-center justify-between">
+              <div className="flex items-center">
+                <CheckCircle className="h-5 w-5 text-green-400 mr-3" />
+                <div>
+                  <p className="text-green-400 font-medium">Message sent successfully!</p>
+                  <p className="text-green-300 text-sm">Since you're here, why not check out our latest insights and articles?</p>
+                </div>
+              </div>
+              <button
+                onClick={() => setShowSuccessMessage(false)}
+                className="text-green-400 hover:text-green-300 transition-colors"
+              >
+                <X className="h-5 w-5" />
+              </button>
+            </div>
+          )}
           {/* Hero Section */}
           <div className="text-center mb-16">
             <h1 className="text-4xl md:text-6xl font-bold gradient-text mb-6">
@@ -273,5 +305,17 @@ export default function BlogPage() {
 
       <Footer />
     </div>
+  )
+}
+
+export default function BlogPage() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen bg-background flex items-center justify-center">
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary-500"></div>
+      </div>
+    }>
+      <BlogContent />
+    </Suspense>
   )
 }

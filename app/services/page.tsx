@@ -1,10 +1,14 @@
 'use client'
 
+// Note: Metadata cannot be exported from client components
+// This should be moved to a layout.tsx file or parent server component
+
 import { motion } from 'framer-motion'
 import { Bot, Zap, Target, Wrench, Users, GraduationCap, ArrowRight } from 'lucide-react'
 import Navigation from '@/components/layout/Navigation'
 import Footer from '@/components/layout/Footer'
 import Link from 'next/link'
+import Cube3D from '@/components/animations/Cube3D'
 
 const services = [
   {
@@ -58,20 +62,56 @@ export default function ServicesPage() {
       
       {/* Hero Section */}
       <section className="pt-24 pb-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            <h1 className="text-4xl md:text-6xl font-bold gradient-text mb-6">
-              Our Services
-            </h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-12">
-              Comprehensive AI solutions designed to transform your business operations, 
-              drive efficiency, and unlock new opportunities for growth.
-            </p>
-          </motion.div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            
+            {/* Text Content - Left Column */}
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              className="text-center lg:text-left"
+            >
+              <h1 className="text-4xl md:text-6xl font-bold gradient-text mb-6">
+                Our Services
+              </h1>
+              <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
+                Comprehensive AI solutions designed to transform your business operations, 
+                drive efficiency, and unlock new opportunities for growth.
+              </p>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.3 }}
+                className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
+              >
+                <Link
+                  href="/book"
+                  className="bg-primary-600 hover:bg-primary-500 text-white px-8 py-3 rounded-lg font-semibold transition-colors inline-flex items-center justify-center"
+                >
+                  Schedule Consultation
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+                <Link
+                  href="/contact"
+                  className="border border-primary-500 text-primary-500 hover:bg-primary-500/10 px-8 py-3 rounded-lg font-semibold transition-colors text-center"
+                >
+                  Get In Touch
+                </Link>
+              </motion.div>
+            </motion.div>
+
+            {/* 3D Cube Animation - Right Column */}
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="flex justify-center"
+            >
+              <Cube3D />
+            </motion.div>
+            
+          </div>
         </div>
       </section>
 

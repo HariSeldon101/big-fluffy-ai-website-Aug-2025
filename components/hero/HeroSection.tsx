@@ -25,14 +25,17 @@ export default function HeroSection() {
   const [connections, setConnections] = useState<Connection[]>([])
   const calendlyUrl = process.env.NEXT_PUBLIC_CALENDLY_URL || 'https://calendly.com/YOUR_HANDLE/intro-15min'
   const [bookHref, setBookHref] = useState<string>('/book')
+  const [servicesHref, setServicesHref] = useState<string>('/services')
 
   // Build a CTA link that preserves UTM params
   useEffect(() => {
     try {
       const qs = window.location.search || ''
       setBookHref(`/book${qs}`)
+      setServicesHref(`/services${qs}`)
     } catch {
       setBookHref('/book')
+      setServicesHref('/services')
     }
   }, [])
 
@@ -251,9 +254,9 @@ export default function HeroSection() {
             <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={20} />
           </Link>
           
-          <button className="border border-primary-500 text-primary-500 hover:bg-primary-500/10 px-8 py-4 rounded-lg font-semibold transition-all duration-300">
+          <Link href={servicesHref} className="border border-primary-500 text-primary-500 hover:bg-primary-500/10 px-8 py-4 rounded-lg font-semibold transition-all duration-300">
             View Our Services
-          </button>
+          </Link>
         </motion.div>
 
         <motion.div

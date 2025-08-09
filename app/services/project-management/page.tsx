@@ -40,6 +40,7 @@ export default function ProjectManagementPage() {
       process={process}
       ctaTitle="Ready to Optimize Your Project Management?"
       ctaDescription="Let us help you deliver projects more efficiently with reduced risks and better outcomes."
+      showPrince2={true}
     />
   )
 }

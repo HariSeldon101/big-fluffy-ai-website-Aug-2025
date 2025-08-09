@@ -40,6 +40,7 @@ export default function ImplementationPage() {
       process={process}
       ctaTitle="Ready to Implement Your AI Solution?"
       ctaDescription="Let us turn your AI vision into reality with expert implementation services."
+      showPrince2={true}
     />
   )
 }
