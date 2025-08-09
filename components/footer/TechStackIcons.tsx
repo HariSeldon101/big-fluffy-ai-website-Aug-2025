@@ -13,8 +13,14 @@ const techStack: TechIcon[] = [
   {
     name: 'PRINCE2',
     icon: (
-      <div className="w-8 h-8 bg-gradient-to-br from-orange-500 to-red-600 rounded flex items-center justify-center">
-        <span className="text-white font-bold text-xs">P2</span>
+      <div className="w-8 h-8 flex items-center justify-center">
+        <Image 
+          src="/prince2-seeklogo.svg" 
+          alt="PRINCE2 Logo" 
+          width={32} 
+          height={32}
+          className="w-8 h-8 object-contain"
+        />
       </div>
     ),
     color: 'from-orange-500 to-red-600'
