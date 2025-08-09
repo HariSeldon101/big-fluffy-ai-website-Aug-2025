@@ -11,8 +11,11 @@ module.exports = {
       colors: {
         background: '#0a0a0a',
         foreground: '#ffffff',
+        card: '#1a1a1a',
+        'muted-foreground': '#9ca3af',
         primary: {
           50: '#faf7ff',
+          400: '#a78bfa',
           500: '#8b5cf6',
           600: '#7c3aed',
           900: '#4c1d95',

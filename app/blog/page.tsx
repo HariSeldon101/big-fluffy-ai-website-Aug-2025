@@ -185,8 +185,8 @@ export default function BlogPage() {
 
             {/* Collapsible Filters and Sort */}
             {showFilters && (
-              <div className="animate-in slide-in-from-top-2 duration-200 ease-out">
-                <div className="flex flex-col md:flex-row gap-4 items-center justify-between bg-card/50 border border-gray-700/50 rounded-lg p-6">
+              <div className="transition-all duration-300 ease-out transform translate-y-0 opacity-100">
+                <div className="flex flex-col md:flex-row gap-4 items-center justify-between bg-gray-900/50 border border-gray-700/50 rounded-lg p-6">
                   {/* Tag Filters */}
                   <div className="flex flex-wrap gap-2 items-center">
                     <Filter className="h-5 w-5 text-muted-foreground" />
