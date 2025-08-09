@@ -9,6 +9,19 @@ const calendlyUrl = process.env.NEXT_PUBLIC_CALENDLY_URL || 'https://calendly.co
 export default function BookPage() {
   const [embedUrl, setEmbedUrl] = useState<string>('')
   const [iframeError, setIframeError] = useState<boolean>(false)
+  
+  // Allow overriding the iframe min-height via env var
+  const minHeightEnv = process.env.NEXT_PUBLIC_CALENDLY_MIN_HEIGHT
+  const normalizeMinHeight = (val?: string): string => {
+    if (!val) return '760px'
+    const trimmed = val.trim()
+    // If it already includes a CSS unit, use as-is
+    if (/\d(px|vh|vw|rem|em|%)$/i.test(trimmed)) return trimmed
+    // If it's a plain number, assume px
+    const num = Number(trimmed)
+    return Number.isFinite(num) && num > 0 ? `${num}px` : '760px'
+  }
+  const iframeMinHeight = normalizeMinHeight(minHeightEnv)
 
   useEffect(() => {
     // Build Calendly URL with dark mode parameters
@@ -32,153 +45,113 @@ export default function BookPage() {
   }, [])
 
   return (
-    <div style={{ 
-      width: '100vw', 
-      minHeight: '100vh', 
-      backgroundColor: '#0a0a0a',
-      margin: 0,
-      padding: 0,
-      display: 'flex',
-      flexDirection: 'column'
-    }}>
+    <div className="min-h-screen bg-background">
       <Navigation />
       
-      <div style={{ 
-        flex: 1,
-        backgroundColor: '#0a0a0a',
-        display: 'flex',
-        paddingTop: '75px',
-        gap: '20px',
-        padding: '75px 20px 0 20px',
-        marginBottom: '-30px'
-      }}>
-        {/* Meeting Info Pane */}
-        <div style={{
-          width: '400px',
-          backgroundColor: '#0a0a0a',
-          color: '#ffffff',
-          padding: '20px'
-        }}>
-          <h1 style={{ 
-            fontSize: '2rem', 
-            fontWeight: 'bold', 
-            marginTop: '90px',
-            marginBottom: '16px',
-            color: '#ffffff'
-          }}>
-            Book a 15‑minute intro call
-          </h1>
+      <div className="pt-24 pb-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
-          <p style={{ 
-            fontSize: '1.125rem', 
-            color: '#d1d5db', 
-            marginBottom: '24px',
-            lineHeight: '1.6'
-          }}>
-            Pick a time that works for you. We'll discuss your goals and outline next steps.
-          </p>
-          
-          <div style={{ marginBottom: '20px' }}>
-            <h3 style={{ 
-              fontSize: '1.25rem', 
-              fontWeight: '600', 
-              marginBottom: '12px',
-              color: '#ffffff'
-            }}>
-              What to expect:
-            </h3>
-            <ul style={{ 
-              listStyle: 'none', 
-              padding: 0,
-              color: '#d1d5db'
-            }}>
-              <li style={{ marginBottom: '8px', paddingLeft: '20px', position: 'relative' }}>
-                <span style={{ position: 'absolute', left: '0', color: '#7c3aed' }}>•</span>
-                Discussion of your AI goals and challenges
-              </li>
-              <li style={{ marginBottom: '8px', paddingLeft: '20px', position: 'relative' }}>
-                <span style={{ position: 'absolute', left: '0', color: '#7c3aed' }}>•</span>
-                Overview of our services and approach
-              </li>
-              <li style={{ marginBottom: '8px', paddingLeft: '20px', position: 'relative' }}>
-                <span style={{ position: 'absolute', left: '0', color: '#7c3aed' }}>•</span>
-                Next steps and timeline discussion
-              </li>
-            </ul>
+          {/* Mobile-first responsive layout */}
+          <div className="flex flex-col lg:flex-row gap-8">
+            
+            {/* Meeting Info Pane */}
+            <div className="lg:w-96 lg:flex-shrink-0">
+              <div className="bg-card border border-gray-700 rounded-xl p-6 lg:p-8">
+                <h1 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
+                  Book a 15‑minute intro call
+                </h1>
+                
+                <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
+                  Pick a time that works for you. We'll discuss your goals and outline next steps.
+                </p>
+                
+                <div className="mb-6">
+                  <h3 className="text-xl font-semibold text-foreground mb-3">
+                    What to expect:
+                  </h3>
+                  <ul className="space-y-2 text-muted-foreground">
+                    <li className="flex items-start">
+                      <div className="w-2 h-2 bg-primary-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
+                      Discussion of your AI goals and challenges
+                    </li>
+                    <li className="flex items-start">
+                      <div className="w-2 h-2 bg-primary-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
+                      Overview of our services and approach
+                    </li>
+                    <li className="flex items-start">
+                      <div className="w-2 h-2 bg-primary-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
+                      Next steps and timeline discussion
+                    </li>
+                  </ul>
+                </div>
+                
+                <div className="bg-primary-900/20 border border-primary-500/30 rounded-lg p-4">
+                  <p className="text-sm text-muted-foreground">
+                    <strong className="text-foreground">Duration:</strong> 15 minutes<br/>
+                    <strong className="text-foreground">Format:</strong> Video call<br/>
+                    <strong className="text-foreground">Cost:</strong> Free consultation
+                  </p>
+                </div>
+              </div>
+            </div>
+            
+            {/* Calendar Pane */}
+            <div className="flex-1">
+              <div className="bg-card border border-gray-700 rounded-xl overflow-hidden">
+                {!embedUrl ? (
+                  <div className="flex items-center justify-center h-full text-muted-foreground">
+                    <div className="text-center">
+                      <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary-500 mx-auto mb-4"></div>
+                      Loading calendar...
+                    </div>
+                  </div>
+                ) : iframeError ? (
+                  <div className="flex items-center justify-center h-full text-muted-foreground">
+                    <div className="text-center p-6">
+                      <p className="mb-4">Unable to load calendar widget.</p>
+                      <a 
+                        href={calendlyUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-primary-400 hover:text-primary-300 underline transition-colors"
+                      >
+                        Open calendar in new window
+                      </a>
+                    </div>
+                  </div>
+                ) : (
+                  <iframe
+                    src={embedUrl}
+                    className="w-full border-none bg-background"
+                    style={{ minHeight: iframeMinHeight }}
+                    title="Calendly Booking"
+                    onError={() => setIframeError(true)}
+                    onLoad={() => console.log('Calendly iframe loaded successfully')}
+                    scrolling="yes"
+                    frameBorder="0"
+                    allowFullScreen
+                  />
+                )}
+              </div>
+            </div>
+            
           </div>
           
-          <div style={{
-            backgroundColor: '#1f2937',
-            padding: '16px',
-            borderRadius: '8px',
-            border: '1px solid #374151'
-          }}>
-            <p style={{ 
-              fontSize: '0.875rem', 
-              color: '#9ca3af',
-              margin: 0
-            }}>
-              <strong style={{ color: '#ffffff' }}>Duration:</strong> 15 minutes<br/>
-              <strong style={{ color: '#ffffff' }}>Format:</strong> Video call<br/>
-              <strong style={{ color: '#ffffff' }}>Cost:</strong> Free consultation
-            </p>
+          {/* Mobile fallback button */}
+          <div className="mt-8 text-center lg:hidden">
+            <a 
+              href={calendlyUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center bg-primary-600 hover:bg-primary-500 text-white px-8 py-3 rounded-lg font-semibold transition-colors"
+            >
+              Open Calendar
+              <svg className="ml-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
+            </a>
           </div>
-        </div>
-        
-        {/* Calendar Pane */}
-        <div style={{ 
-          flex: 1,
-          backgroundColor: '#0a0a0a'
-        }}>
-          {!embedUrl ? (
-            <div style={{
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              minHeight: 'calc(100vh - 240px)',
-              color: '#ffffff'
-            }}>
-              Loading calendar...
-            </div>
-          ) : iframeError ? (
-            <div style={{
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              minHeight: 'calc(100vh - 240px)',
-              color: '#ffffff',
-              flexDirection: 'column',
-              padding: '20px',
-              textAlign: 'center'
-            }}>
-              <p style={{ marginBottom: '16px' }}>Unable to load calendar widget.</p>
-              <a 
-                href={calendlyUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{
-                  color: '#7c3aed',
-                  textDecoration: 'underline'
-                }}
-              >
-                Open calendar in new window
-              </a>
-            </div>
-          ) : (
-            <iframe
-              src={embedUrl}
-              width="100%"
-              height="100%"
-              style={{ 
-                border: 'none',
-                backgroundColor: '#0a0a0a',
-                minHeight: 'calc(100vh - 240px)' // Account for header, footer, and increased top padding
-              }}
-              title="Calendly Booking"
-              onError={() => setIframeError(true)}
-              onLoad={() => console.log('Calendly iframe loaded successfully')}
-            />
-          )}
+          
         </div>
       </div>
       
