@@ -12,6 +12,7 @@ import Navigation from '@/components/layout/Navigation'
 import Footer from '@/components/layout/Footer'
 import SocialShare from '@/components/blog/SocialShare'
 import BlogPost from '@/components/blog/BlogPost'
+import { getOverrideForSlug } from '@/lib/blog/overrides'
 
 interface BlogPostData {
   id: string
@@ -61,7 +62,10 @@ export default function BlogPostPage() {
         return
       }
 
-      setPost(data)
+      // Apply overrides if they exist for this slug
+      const override = getOverrideForSlug(slug)
+      const finalPost = override ? { ...data, ...override } : data
+      setPost(finalPost)
     } catch (error) {
       console.error('Error fetching blog post:', error)
       setError('Error loading post')
