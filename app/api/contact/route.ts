@@ -1,7 +1,14 @@
 import { NextResponse } from 'next/server'
 import { Resend } from 'resend'
 
-const resend = new Resend(process.env.RESEND_API_KEY)
+// Initialize Resend client only when needed to avoid build-time errors
+const getResendClient = () => {
+  const apiKey = process.env.RESEND_API_KEY
+  if (!apiKey) {
+    throw new Error('RESEND_API_KEY environment variable is not configured')
+  }
+  return new Resend(apiKey)
+}
 
 interface ContactFormData {
   firstName: string
@@ -48,6 +55,8 @@ export async function POST(req: Request) {
     }
 
     try {
+      const resend = getResendClient()
+      
       // Send notification email to Big Fluffy AI
       const { data: notificationEmail, error: notificationError } = await resend.emails.send({
         from: 'Big Fluffy AI <noreply@bigfluffy.ai>',
