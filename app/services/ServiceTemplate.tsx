@@ -1,7 +1,8 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { CheckCircle, ArrowRight, LucideIcon } from 'lucide-react'
+import { CheckCircle, ArrowRight } from 'lucide-react'
+import type { LucideIcon } from 'lucide-react'
 import Navigation from '@/components/layout/Navigation'
 import Footer from '@/components/layout/Footer'
 import Link from 'next/link'
